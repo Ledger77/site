@@ -22,6 +22,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- ===== Google Analytics 4 =====
+       1. Acesse analytics.google.com e crie uma propriedade para o seu site.
+       2. Copie o Measurement ID (ex.: G-AB12CD34EF).
+       3. Substitua G-XXXXXXXXXX nas duas linhas abaixo pelo seu ID.
+       Pronto: visitas, origem do tráfego e cliques nos produtos aparecerão no painel. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
