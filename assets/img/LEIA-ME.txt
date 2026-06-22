@@ -1,0 +1,12 @@
+Coloque aqui a imagem da sua logo (a coruja) com o nome:
+
+    ledger.png
+
+Como subir pelo GitHub:
+1. Entre nesta pasta (assets/img) no site do GitHub.
+2. Clique em "Add file" > "Upload files".
+3. Arraste a imagem da coruja (renomeada para ledger.png).
+4. Clique em "Commit changes".
+
+Pronto: a logo aparece automaticamente no topo do site.
+Formatos aceitos: PNG (de preferência com fundo transparente) ou JPG.
