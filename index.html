@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 👇 TROQUE pelo nome e descrição da sua loja -->
+  <title>Sua Loja Digital — Audiobooks, Videobooks e E-books</title>
+  <meta name="description" content="Catálogo de audiobooks, videobooks e e-books. Escolha o seu e compre com segurança pela Hotmart." />
+
+  <!-- Compartilhamento no WhatsApp / redes sociais -->
+  <meta property="og:title" content="Sua Loja Digital" />
+  <meta property="og:description" content="Audiobooks, Videobooks e E-books selecionados para você." />
+  <meta property="og:type" content="website" />
+
+  <!-- Ícone da aba do navegador (um livrinho) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== TOPO ===================== -->
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <!-- 👇 TROQUE pelo nome da sua loja -->
+      <a href="#" class="marca">📚 Sua Loja Digital</a>
+      <nav class="topo-nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== DESTAQUE (HERO) ===================== -->
+  <section class="hero">
+    <div class="container hero-conteudo">
+      <span class="hero-selo">✨ Conteúdo digital de qualidade</span>
+      <h1>Audiobooks, Videobooks e E-books<br />que cabem no seu dia a dia</h1>
+      <p>Escolha o seu favorito abaixo e finalize a compra com toda a segurança da Hotmart.</p>
+      <a href="#catalogo" class="btn btn-grande">Ver catálogo ↓</a>
+    </div>
+  </section>
+
+  <!-- ===================== CATÁLOGO ===================== -->
+  <main id="catalogo" class="container secao">
+    <h2 class="secao-titulo">Nosso catálogo</h2>
+
+    <!-- Filtros por tipo -->
+    <div class="filtros" id="filtros">
+      <button class="chip ativo" data-filtro="todos">Todos</button>
+      <button class="chip" data-filtro="audiobook">🎧 Audiobooks</button>
+      <button class="chip" data-filtro="videobook">🎬 Videobooks</button>
+      <button class="chip" data-filtro="ebook">📚 E-books</button>
+    </div>
+
+    <!-- Campo de busca -->
+    <div class="busca">
+      <input id="busca" type="search" placeholder="🔎 Buscar por nome..." aria-label="Buscar produto" />
+    </div>
+
+    <!-- Aqui o JavaScript coloca os produtos automaticamente -->
+    <div id="grade-produtos" class="grade"></div>
+
+    <!-- Mensagem quando nada é encontrado -->
+    <p id="vazio" class="vazio" hidden>Nenhum produto encontrado. 😕</p>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer id="contato" class="rodape">
+    <div class="container">
+      <p class="rodape-marca">📚 Sua Loja Digital</p>
+      <p>Dúvidas? Fale com a gente:
+        <!-- 👇 TROQUE pelo seu WhatsApp/e-mail. Para WhatsApp use: https://wa.me/55SEUNUMERO -->
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
+      </p>
+      <p class="rodape-mini">© <span id="ano"></span> Sua Loja Digital. Pagamentos processados com segurança pela Hotmart.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: primeiro a lista de produtos, depois o código que monta a página -->
+  <script src="assets/js/produtos.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
