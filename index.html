@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0e12" />
 
   <title>Ledger — Audiobooks e Videobooks de Filosofia e Ficção</title>
   <meta name="description" content="Grandes obras da filosofia e da ficção em audiobook e videobook, com linguagem simples. Assista de graça no canal Ledger e acompanhe os lançamentos exclusivos." />
@@ -18,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -27,9 +28,14 @@
   <!-- ===================== TOPO ===================== -->
   <header class="topo">
     <div class="container topo-conteudo">
-      <a href="#" class="marca">🦉 Ledger</a>
+      <!-- O logo usa assets/img/ledger.png se existir; senão mostra a coruja 🦉 -->
+      <a href="#" class="marca">
+        <img src="assets/img/ledger.png" alt="" class="marca-logo" onerror="this.replaceWith(document.createTextNode('🦉'))" />
+        Ledger
+      </a>
       <nav class="topo-nav">
         <a class="nav-link" href="#catalogo">Catálogo</a>
+        <a class="nav-link" href="#atendimento">Atendimento</a>
         <a class="btn-yt" href="https://www.youtube.com/@Ledger.77" target="_blank" rel="noopener">▶ YouTube</a>
       </nav>
     </div>
@@ -51,8 +57,9 @@
   <!-- ===================== CATÁLOGO ===================== -->
   <main id="catalogo" class="container secao">
     <h2 class="secao-titulo">Catálogo</h2>
+    <p class="secao-sub">Clique em um título para ver todos os detalhes.</p>
 
-    <!-- Filtro por acesso (grátis / exclusivo) -->
+    <!-- Filtro por acesso -->
     <div class="filtros-grupo">
       <span class="filtros-label">Acesso:</span>
       <div class="filtros" id="filtros-acesso">
@@ -62,34 +69,50 @@
       </div>
     </div>
 
-    <!-- Filtro por categoria (gerado a partir de CATEGORIAS) -->
+    <!-- Filtro por categoria (gerado pelo JavaScript) -->
     <div class="filtros-grupo">
       <span class="filtros-label">Categoria:</span>
-      <div class="filtros" id="filtros-categoria"><!-- preenchido pelo JavaScript --></div>
+      <div class="filtros" id="filtros-categoria"></div>
     </div>
 
-    <!-- Campo de busca -->
+    <!-- Busca -->
     <div class="busca">
       <input id="busca" type="search" placeholder="🔎 Buscar por nome..." aria-label="Buscar produto" />
     </div>
 
-    <!-- Aqui o JavaScript coloca os produtos -->
+    <!-- Produtos (preenchido pelo JavaScript) -->
     <div id="grade-produtos" class="grade"></div>
-
-    <!-- Mensagem quando nada é encontrado -->
     <p id="vazio" class="vazio" hidden></p>
   </main>
 
+  <!-- ===================== ATENDIMENTO AO CLIENTE ===================== -->
+  <section id="atendimento" class="atendimento">
+    <div class="container">
+      <h2 class="secao-titulo">Atendimento ao cliente</h2>
+      <p class="atend-sac">SAC — Serviço de Atendimento ao Consumidor</p>
+      <div class="atend-cartao">
+        <p>📧 E-mail: <a href="mailto:dger77@protonmail.com">dger77@protonmail.com</a></p>
+        <p>▶️ Canal: <a href="https://www.youtube.com/@Ledger.77" target="_blank" rel="noopener">YouTube @Ledger.77</a></p>
+      </div>
+      <p class="atend-obs">Atendimento por e-mail. Respondemos em até 48h úteis.</p>
+    </div>
+  </section>
+
   <!-- ===================== RODAPÉ ===================== -->
-  <footer id="contato" class="rodape">
+  <footer class="rodape">
     <div class="container">
       <p class="rodape-marca">🦉 Ledger</p>
-      <p>Acompanhe tudo no nosso canal:
-        <a href="https://www.youtube.com/@Ledger.77" target="_blank" rel="noopener">YouTube @Ledger.77</a>
-      </p>
       <p class="rodape-mini">© <span id="ano"></span> Ledger. Conteúdos gratuitos no YouTube; lançamentos exclusivos com pagamento seguro pela Hotmart.</p>
     </div>
   </footer>
+
+  <!-- ===================== PÁGINA DE DETALHES (MODAL) ===================== -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-caixa" role="dialog" aria-modal="true" aria-label="Detalhes do produto">
+      <button class="modal-fechar" data-fechar aria-label="Fechar">✕</button>
+      <div id="modal-conteudo"></div>
+    </div>
+  </div>
 
   <!-- Scripts: primeiro a lista de produtos, depois o código que monta a página -->
   <script src="assets/js/produtos.js"></script>
