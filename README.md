@@ -1,7 +1,10 @@
-# 📚 Sua Loja Digital — Catálogo de Audiobooks, Videobooks e E-books
+# 🦉 Ledger — Audiobooks e Videobooks de Filosofia e Ficção
 
-Site simples e gratuito para mostrar seus produtos digitais. Cada produto tem
-um botão **Comprar** que leva direto para o link da **Hotmart** daquele produto.
+Catálogo dos conteúdos do canal **Ledger**. Os produtos **grátis** levam ao vídeo
+no YouTube; os **exclusivos** (futuros) levam ao link da **Hotmart**.
+
+🔗 Site no ar: **https://ledger77.github.io/site/**
+▶️ Canal: **https://www.youtube.com/@Ledger.77**
 
 ---
 
@@ -13,41 +16,48 @@ Cada produto é um bloco assim:
 
 ```js
 {
-  titulo: "Nome do produto",
-  tipo: "ebook",                 // "audiobook", "videobook" ou "ebook"
-  descricao: "Frase curta sobre o produto.",
-  preco: "R$ 29,90",
-  imagem: "",                    // link da capa (opcional)
-  link: "https://www.hotmart.com/SEU-PRODUTO"   // 🔗 seu link da Hotmart
+  titulo: "Humano, Demasiado Humano",
+  tipo: "audiobook",            // "audiobook" ou "videobook"
+  categoria: "Filosofia",       // uma das CATEGORIAS (veja no topo do arquivo)
+  acesso: "gratis",             // "gratis" (vai pro YouTube) ou "exclusivo" (vai pra Hotmart)
+  preco: "",                    // "" quando grátis; ex.: "R$ 29,90" quando exclusivo
+  imagem: "https://img.youtube.com/vi/ID_DO_VIDEO/maxresdefault.jpg",
+  link: "https://youtu.be/ID_DO_VIDEO"   // grátis: link do vídeo | exclusivo: link da Hotmart
 }
 ```
 
-- Para **adicionar** um produto: copie um bloco inteiro, cole logo abaixo e
-  coloque uma vírgula entre eles.
-- Para **remover**: apague o bloco do produto.
-- ⚠️ **Não esqueça** de trocar o `link` pelo link real da Hotmart de cada produto
-  — é por ele que a venda acontece.
+- **Adicionar:** copie um bloco inteiro, cole logo abaixo e separe com vírgula.
+- **Remover:** apague o bloco.
 
-## 🖼️ Como colocar as capas
+## 🖼️ A capa (imagem) mais fácil
 
-No campo `imagem`, cole o link de uma imagem (de preferência vertical, tipo capa
-de livro). Você pode criar capas bonitas no **Canva** e usar o link da imagem aqui.
-Se deixar `imagem: ""`, o site mostra uma capa colorida automática.
+Use a **miniatura do seu próprio vídeo do YouTube**. Pegue o código do vídeo
+(o que vem depois de `youtu.be/`) e monte o link assim:
 
-## 👀 Como ver o site no seu computador
+```
+https://img.youtube.com/vi/CODIGO_DO_VIDEO/maxresdefault.jpg
+```
 
-Abra o arquivo `index.html` com um duplo clique. Ele abre no navegador.
+Exemplo: para `https://youtu.be/kyKFWEBFe0w`, a capa é
+`https://img.youtube.com/vi/kyKFWEBFe0w/maxresdefault.jpg`.
 
-## 🌐 Como publicar na internet (grátis, com GitHub Pages)
+## 🏷️ Categorias
 
-1. No GitHub, abra este repositório e clique em **Settings** (Configurações).
-2. No menu da esquerda, clique em **Pages**.
-3. Em **Branch**, escolha a branch do site e a pasta **/ (root)**, e clique em **Save**.
-4. Aguarde 1–2 minutos. O endereço do seu site aparece no topo dessa mesma página.
+No topo do `produtos.js` existe a lista de categorias que viram botões de filtro:
 
-Pronto! Seu catálogo estará no ar. 🎉
+```js
+const CATEGORIAS = ["Ficção", "Filosofia"];
+```
 
----
+Para criar uma categoria nova (ex.: História), é só adicioná-la nessa lista
+e usar o mesmo nome no campo `categoria` dos produtos.
 
-> Os produtos que já vêm no site são apenas **exemplos** — troque pelos seus.
-> Pagamentos são processados com segurança pela Hotmart.
+## 🆓 Grátis x 🔒 Exclusivo
+
+- `acesso: "gratis"` → preço aparece como **Grátis** e o botão vira **"▶ Assistir"** (abre o YouTube).
+- `acesso: "exclusivo"` → aparece o **preço** e o botão **"Comprar"** (abre a Hotmart).
+
+## 🌐 Publicar as alterações
+
+O site é publicado pelo GitHub Pages a partir da branch **main**. Sempre que o
+conteúdo da `main` mudar, o site é atualizado sozinho em 1–2 minutos.
