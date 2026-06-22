@@ -146,6 +146,10 @@ function abrirModal(i) {
   document.body.style.overflow = "hidden";
   const caixa = modal.querySelector(".modal-caixa");
   if (caixa) caixa.scrollTop = 0;
+  // Analytics: rastreia qual produto foi visualizado
+  if (typeof gtag === "function") {
+    gtag("event", "ver_produto", { produto: p.titulo, tipo: p.tipo, categoria: p.categoria, acesso: p.acesso });
+  }
 }
 
 function fecharModal() {
@@ -225,6 +229,18 @@ document.addEventListener("keydown", function (e) {
 busca.addEventListener("input", function (e) {
   termoBusca = e.target.value;
   renderizar();
+});
+
+// Analytics: rastreia cliques nos botões "Assistir agora" / "Comprar agora" / "Ver canal"
+modalConteudo.addEventListener("click", function (e) {
+  const link = e.target.closest("a");
+  if (!link || typeof gtag !== "function") return;
+  const titulo = modalConteudo.querySelector(".modal-titulo");
+  gtag("event", "clique_produto", {
+    produto: titulo ? titulo.textContent.trim() : "desconhecido",
+    acao: link.textContent.trim(),
+    url: link.href
+  });
 });
 
 /* ----------------------------- Início ----------------------------- */
