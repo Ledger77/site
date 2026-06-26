@@ -39,14 +39,12 @@ muda, o site atualiza sozinho em 1–2 minutos.
 ├── README.md               # Guia em PT para o dono adicionar produtos
 ├── CLAUDE.md               # (este arquivo) contexto para IAs
 ├── .nojekyll               # Faz o GitHub Pages servir a pasta assets sem processar
-├── Ledger.png              # ⚠️ logo enviada pelo dono (ver "Pendências")
 └── assets/
-    ├── css/styles.css      # Tema escuro (variáveis CSS no :root)
+    ├── css/styles.css      # Tema escuro + acabamento (atmosfera, animações). Variáveis no :root
     ├── js/produtos.js      # ⭐ ÚNICO arquivo que o dono edita: CATEGORIAS + PRODUTOS
-    ├── js/app.js           # Lógica: monta cards, modal, filtros, busca, eventos GA4
+    ├── js/app.js           # Lógica: monta cards, modal, filtros, busca, animações, eventos GA4
     └── img/
-        ├── ledger.png      # logo esperada AQUI (assets/img/ledger.png)
-        └── LEIA-ME.txt     # instruções de upload da logo
+        └── ledger.png      # ✅ logo da coruja (já no lugar certo, aparece no topo)
 ```
 
 ### Como os dados funcionam
@@ -59,6 +57,21 @@ muda, o site atualiza sozinho em 1–2 minutos.
 - Capa recomendada = miniatura do YouTube:
   `https://img.youtube.com/vi/ID_DO_VIDEO/maxresdefault.jpg`
   (o `app.js` já cai para `hqdefault` automaticamente se a `maxres` não existir).
+
+### Método de conteúdo do canal (importante p/ cadastrar produtos)
+- **Audiobook** → o livro inteiro num vídeo só (`link` = vídeo do YouTube).
+- **Videobook (vídeo ilustrado)** → pode ser:
+  - **completo** num vídeo (`link` = vídeo), ou
+  - **em partes** (obras longas): o dono publica parte por parte e junta tudo
+    numa **playlist**. Nesse caso o `link` é a **playlist** e a `imagem` é a
+    miniatura de uma das partes (ex.: a Parte 1).
+- ⚠️ **YouTube é bloqueado neste ambiente de IA** (proxy nega youtube.com e
+  img.youtube.com). Logo, a IA **não consegue abrir os vídeos** para descobrir o
+  título nem puxar a miniatura. Ao cadastrar produtos, **peça ao dono o título de
+  cada obra** (e, p/ playlist, o link da Parte 1 p/ a capa). A pesquisa sobre as
+  obras na web funciona normalmente.
+- Todas as obras têm **adaptação da escrita feita pelo dono** (linguagem mais
+  fluida, atual, simplificada e modernizada) — vale mencionar nos `detalhes`.
 
 ---
 
@@ -77,11 +90,26 @@ muda, o site atualiza sozinho em 1–2 minutos.
 - ✅ **Google Analytics 4** instalado (ID `G-G2G86J7W92`), com eventos personalizados:
   - `ver_produto` → disparado ao abrir o modal de um produto.
   - `clique_produto` → disparado ao clicar em "Assistir/Comprar/Ver canal".
-- ✅ Logo com fallback: usa `assets/img/ledger.png`; se não existir, mostra 🦉.
+- ✅ Logo da coruja no topo (`assets/img/ledger.png`); fallback 🦉 se faltar.
+- ✅ **Acabamento visual** (atmosfera "biblioteca à meia-luz"): luz dourada que
+  respira no hero, textura sutil, epígrafe de Nietzsche, traço dourado nos títulos,
+  zoom suave na capa dos cards e **animações de entrada** (revelar ao rolar, via
+  IntersectionObserver nativo). Respeita `prefers-reduced-motion`.
 
-### Produtos atuais
-1. **Humano, Demasiado Humano** — Nietzsche (1878), Filosofia, audiobook, grátis.
-   Vídeo: `https://youtu.be/kyKFWEBFe0w`
+### Produtos atuais (8) — todos grátis (YouTube)
+**Filosofia (Nietzsche):**
+1. **Humano, Demasiado Humano** (1878) — audiobook — `https://youtu.be/kyKFWEBFe0w`
+2. **Assim Falou Zaratustra** (1883) — videobook ilustrado — `https://youtu.be/VhkXzWzRIyo`
+3. **Aurora** (1881) — audiobook — `https://youtu.be/Oy8kJapGQSo`
+4. **A Genealogia da Moral** (1887) — audiobook — `https://youtu.be/wJfQFefWQnM`
+5. **O Nascimento da Tragédia** (1872) — audiobook — `https://youtu.be/hulz3ebGFL0`
+6. **Sobre Verdade e Mentira** (1873) — audiobook — `https://youtu.be/JHKta2RN280`
+
+**Ficção (Orwell) — duas versões do mesmo livro:**
+7. **1984 — Edição Completa** — videobook ilustrado (livro inteiro num vídeo) — `https://youtu.be/Uc9Ez1DG88g`
+8. **1984 — Edição em Quadrinhos** — videobook em **partes** (playlist, em quadrinhos,
+   personagens consistentes; hoje Partes 1 e 2, vai crescendo) —
+   playlist `PLH27GiXFK5uIJxzroQJR9inaaU5Xw7afy` (capa = Parte 1, `TcImv1wqPIc`)
 
 ---
 
@@ -138,14 +166,14 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
 
 ## 6. Pendências / próximos passos
 
-- [ ] **⚠️ Logo no lugar errado:** o dono subiu `Ledger.png` na **raiz** do repo,
-      mas o site procura em **`assets/img/ledger.png`** (minúsculo). Enquanto não
-      for movida/renomeada, o site mostra a coruja 🦉 de fallback. Ação: mover/
-      renomear o arquivo para `assets/img/ledger.png`.
-- [ ] Adicionar mais vídeos do canal como produtos (ex.: 1984/Orwell, Aurora,
-      Assim Falou Zaratustra, Sobre Verdade e Mentira, O Nascimento da Tragédia).
+- [x] ~~Logo no lugar errado~~ → **feito**: movida para `assets/img/ledger.png`.
+- [x] ~~Adicionar mais vídeos do canal~~ → **feito**: 8 produtos no ar (6 Nietzsche
+      + 2 versões do 1984).
+- [ ] Conforme o dono publica novas **partes do 1984 em quadrinhos**, nada a fazer
+      no site: a playlist atualiza sozinha. (Trocar a capa só se ele quiser.)
 - [ ] Quando houver produto pago, criar o 1º **exclusivo** com link da Hotmart.
 - [ ] (Opcional) Domínio próprio em vez de `ledger77.github.io/site`.
+- [ ] Adicionar novas obras assim que o dono postar (pedir título + tipo de cada uma).
 
 ---
 
@@ -157,6 +185,12 @@ O site evoluiu em etapas, todas já mergeadas na `main`:
    Ficção/Filosofia + 1º produto (Nietzsche).
 3. Tema escuro + modal de detalhes + seção SAC.
 4. Google Analytics 4 (visitas, origem do tráfego, cliques nos produtos).
+5. Logo movida para o lugar certo + acabamento visual (atmosfera + animações).
+6. Catálogo completo: 8 produtos (6 obras de Nietzsche + 2 versões do 1984/Orwell),
+   com detalhes pesquisados na web e a nota da adaptação do dono.
+
+> Regra combinada com o dono: **a cada atualização do site, atualizar também este
+> CLAUDE.md** (produtos, funcionalidades, pendências).
 
 ### Como medir tráfego por origem (UTM)
 Para saber de onde vêm as visitas, usar links com parâmetros UTM:
