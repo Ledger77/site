@@ -322,3 +322,100 @@ a { color: var(--ouro); }
   .modal-corpo { padding: 22px 20px 26px; }
   .modal-titulo { font-size: 1.55rem; }
 }
+
+/* ============================================================================
+   ✨ ACABAMENTO — atmosfera "biblioteca à meia-luz"
+   Aprofunda a identidade escura/intelectual: luz dourada que respira,
+   textura sutil, tipografia mais marcante, animações de entrada com bom gosto.
+   Tudo em CSS puro, sem bibliotecas. Respeita quem prefere menos animação.
+   ============================================================================ */
+
+/* Rolagem suave ao clicar nos links do menu (Catálogo / Atendimento) */
+html { scroll-behavior: smooth; }
+#catalogo, #atendimento { scroll-margin-top: 84px; }
+
+/* Anel de foco dourado e consistente (acessibilidade no teclado) */
+a:focus-visible, button:focus-visible, .chip:focus-visible,
+.btn:focus-visible, .btn-yt:focus-visible, .btn-comprar:focus-visible,
+.busca input:focus-visible, .card:focus-visible {
+  outline: 2px solid var(--ouro-claro);
+  outline-offset: 3px;
+}
+
+/* ---------- Hero com mais presença ---------- */
+.hero { position: relative; overflow: hidden; }
+.hero .hero-conteudo { position: relative; z-index: 2; }
+
+/* Luz dourada que respira lentamente ao fundo */
+.hero::before {
+  content: ""; position: absolute; inset: -25%; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(38% 38% at 80% 8%, rgba(217, 164, 65, .18), transparent 70%),
+    radial-gradient(40% 40% at 8% 30%, rgba(224, 56, 43, .10), transparent 70%);
+  animation: brilho 16s ease-in-out infinite alternate;
+}
+@keyframes brilho {
+  from { transform: translate3d(0, 0, 0) scale(1);      opacity: .8; }
+  to   { transform: translate3d(0, -2%, 0) scale(1.08); opacity: 1; }
+}
+
+/* Textura fina (grão de papel) por cima do hero, bem discreta */
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); letter-spacing: -.012em; }
+.hero-selo { letter-spacing: .02em; }
+.hero-epigrafe {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic; color: var(--ouro-claro);
+  font-size: 1.05rem; opacity: .92;
+  max-width: 540px; margin: -8px auto 30px;
+}
+
+/* ---------- Títulos de seção com traço dourado ---------- */
+.secao-titulo { position: relative; padding-bottom: 16px; }
+.secao-titulo::after {
+  content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: 56px; height: 3px; border-radius: 3px; background: var(--ouro-grad);
+}
+
+/* ---------- Cartões: capa com zoom suave + leve sombreado ---------- */
+.capa-img { transition: transform .6s cubic-bezier(.2, .6, .2, 1); }
+.card:hover .capa-img { transform: scale(1.06); }
+.capa::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, .42), transparent 42%);
+}
+
+/* ---------- Animação de entrada (revelar ao rolar) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0; transform: translateY(22px);
+    transition: opacity .7s cubic-bezier(.2, .6, .2, 1), transform .7s cubic-bezier(.2, .6, .2, 1);
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  /* Entrada escalonada no hero (um item depois do outro) */
+  .hero-conteudo .reveal:nth-child(1) { transition-delay: .05s; }
+  .hero-conteudo .reveal:nth-child(2) { transition-delay: .15s; }
+  .hero-conteudo .reveal:nth-child(3) { transition-delay: .25s; }
+  .hero-conteudo .reveal:nth-child(4) { transition-delay: .35s; }
+  .hero-conteudo .reveal:nth-child(5) { transition-delay: .45s; }
+
+  /* Entrada escalonada dos cartões do catálogo */
+  .grade .reveal:nth-child(1) { transition-delay: .00s; }
+  .grade .reveal:nth-child(2) { transition-delay: .08s; }
+  .grade .reveal:nth-child(3) { transition-delay: .16s; }
+  .grade .reveal:nth-child(4) { transition-delay: .24s; }
+  .grade .reveal:nth-child(5) { transition-delay: .32s; }
+  .grade .reveal:nth-child(6) { transition-delay: .40s; }
+}
+
+/* Quem pediu menos animação no sistema: desliga tudo que se move */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero::before { animation: none; }
+  .card:hover .capa-img { transform: none; }
+}
