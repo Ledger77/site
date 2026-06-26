@@ -173,10 +173,11 @@ a { color: var(--ouro); }
   outline: none;
 }
 
-/* Capa do produto */
+/* Capa do produto — proporção 16:9 (igual à miniatura do YouTube),
+   para a imagem aparecer INTEIRA, sem cortar as laterais. */
 .capa {
   position: relative;
-  height: 180px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   display: flex; align-items: center; justify-content: center;
 }
@@ -252,7 +253,7 @@ a { color: var(--ouro); }
 }
 .modal-fechar:hover { background: rgba(0, 0, 0, .8); }
 
-.modal-topo { width: 100%; height: 280px; overflow: hidden; background: var(--bg-2); }
+.modal-topo { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-2); }
 .modal-capa { width: 100%; height: 100%; object-fit: cover; display: block; }
 .modal-capa--audiobook,
 .modal-capa--videobook,
@@ -318,7 +319,6 @@ a { color: var(--ouro); }
   .nav-link { display: none; }
   .hero { padding: 56px 0 60px; }
   .secao { padding: 46px 20px 30px; }
-  .modal-topo { height: 200px; }
   .modal-corpo { padding: 22px 20px 26px; }
   .modal-titulo { font-size: 1.55rem; }
 }
@@ -381,13 +381,9 @@ a:focus-visible, button:focus-visible, .chip:focus-visible,
   width: 56px; height: 3px; border-radius: 3px; background: var(--ouro-grad);
 }
 
-/* ---------- Cartões: capa com zoom suave + leve sombreado ---------- */
+/* ---------- Cartões: capa com zoom suave ao passar o mouse ---------- */
 .capa-img { transition: transform .6s cubic-bezier(.2, .6, .2, 1); }
 .card:hover .capa-img { transform: scale(1.06); }
-.capa::after {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(to top, rgba(0, 0, 0, .42), transparent 42%);
-}
 
 /* ---------- Animação de entrada (revelar ao rolar) ---------- */
 @media (prefers-reduced-motion: no-preference) {

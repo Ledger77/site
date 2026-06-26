@@ -80,7 +80,11 @@ muda, o site atualiza sozinho em 1–2 minutos.
 - ✅ Catálogo em grade responsiva, gerado por JS.
 - ✅ Filtro por **Acesso** (Todos / 🆓 Grátis / 🔒 Exclusivos).
 - ✅ Filtro por **Categoria** (Ficção / Filosofia) — gerado a partir de `CATEGORIAS`.
+- ✅ Filtro por **Tipo** (🎧 Audiobook / 🎬 Videobook) — gerado automaticamente a
+  partir dos tipos presentes nos produtos (`montarFiltrosTipo` em `app.js`).
 - ✅ Busca por texto (título + descrição).
+- ✅ **Capas em 16:9** (mesma proporção da miniatura do YouTube): cards e modal
+  usam `aspect-ratio: 16/9`, então a imagem aparece **inteira**, sem cortes.
 - ✅ **Modal de detalhes**: clicar no card abre página de detalhes (capa grande,
   autor/ano, parágrafos, "Você vai encontrar", temas, sobre o autor, botões de ação).
 - ✅ Seção **Atendimento ao cliente (SAC)** com e-mail e canal.

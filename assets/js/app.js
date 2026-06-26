@@ -17,12 +17,14 @@ const vazio            = document.getElementById("vazio");
 const busca            = document.getElementById("busca");
 const filtrosAcesso    = document.getElementById("filtros-acesso");
 const filtrosCategoria = document.getElementById("filtros-categoria");
+const filtrosTipo      = document.getElementById("filtros-tipo");
 const modal            = document.getElementById("modal");
 const modalConteudo    = document.getElementById("modal-conteudo");
 
 // Estado dos filtros
 let filtroAcesso    = "todos";
 let filtroCategoria = "todas";
+let filtroTipo      = "todos";
 let termoBusca      = "";
 
 // Dá um índice fixo a cada produto (usado para abrir os detalhes)
@@ -176,6 +178,10 @@ function fecharModal() {
 /* ----------------------------- Filtros e busca ----------------------------- */
 function mensagemVazio() {
   if (filtroAcesso === "exclusivo") return "🔒 Conteúdos exclusivos chegando em breve! Fique de olho. 👀";
+  if (filtroTipo !== "todos") {
+    const t = TIPOS[filtroTipo];
+    return `${t ? t.emoji + " " : ""}Nenhum ${t ? t.label.toLowerCase() : "item"} nesse filtro ainda. 😕`;
+  }
   if (filtroCategoria !== "todas")  return `📖 Novidades de ${filtroCategoria} em breve!`;
   return "Nenhum produto encontrado. 😕";
 }
@@ -186,8 +192,9 @@ function renderizar() {
   const lista = PRODUTOS.filter(function (p) {
     const okAcesso    = filtroAcesso === "todos" || p.acesso === filtroAcesso;
     const okCategoria = filtroCategoria === "todas" || p.categoria === filtroCategoria;
+    const okTipo      = filtroTipo === "todos" || p.tipo === filtroTipo;
     const okBusca     = !termo || (p.titulo + " " + p.descricao).toLowerCase().includes(termo);
-    return okAcesso && okCategoria && okBusca;
+    return okAcesso && okCategoria && okTipo && okBusca;
   });
 
   grade.innerHTML = lista.map(criarCard).join("");
@@ -209,6 +216,20 @@ function montarFiltrosCategoria() {
   let html = `<button class="chip ativo" data-categoria="todas">Todas</button>`;
   html += cats.map(c => `<button class="chip" data-categoria="${esc(c)}">${esc(c)}</button>`).join("");
   filtrosCategoria.innerHTML = html;
+}
+
+function montarFiltrosTipo() {
+  // Gera os botões a partir dos tipos que realmente existem nos produtos
+  // (mantém a ordem definida em TIPOS: audiobook, videobook, ebook).
+  const presentes = new Set(PRODUTOS.map(p => p.tipo).filter(Boolean));
+  const ordem = Object.keys(TIPOS).filter(t => presentes.has(t));
+
+  let html = `<button class="chip ativo" data-tipo="todos">Todos</button>`;
+  html += ordem.map(t => {
+    const info = TIPOS[t];
+    return `<button class="chip" data-tipo="${esc(t)}">${info.emoji} ${esc(info.label)}</button>`;
+  }).join("");
+  filtrosTipo.innerHTML = html;
 }
 
 function ligarFiltros(container, aoSelecionar) {
@@ -262,7 +283,9 @@ modalConteudo.addEventListener("click", function (e) {
 
 /* ----------------------------- Início ----------------------------- */
 montarFiltrosCategoria();
+montarFiltrosTipo();
 ligarFiltros(filtrosAcesso,    b => (filtroAcesso = b.dataset.acesso));
 ligarFiltros(filtrosCategoria, b => (filtroCategoria = b.dataset.categoria));
+ligarFiltros(filtrosTipo,      b => (filtroTipo = b.dataset.tipo));
 document.getElementById("ano").textContent = new Date().getFullYear();
 renderizar();
