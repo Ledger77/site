@@ -28,6 +28,22 @@ let termoBusca      = "";
 // Dá um índice fixo a cada produto (usado para abrir os detalhes)
 PRODUTOS.forEach((p, i) => (p._i = i));
 
+/* ----------------------------- Animações de entrada -----------------------------
+   Revela os elementos com a classe "reveal" conforme eles entram na tela.
+   Usa o IntersectionObserver do próprio navegador (sem biblioteca externa).
+   Quem prefere menos animação (acessibilidade) recebe tudo já visível pelo CSS. */
+const aoRevelar = (function () {
+  if (!("IntersectionObserver" in window)) {
+    return { observarTodos() { document.querySelectorAll(".reveal").forEach(e => e.classList.add("is-visible")); } };
+  }
+  const io = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  return { observarTodos() { document.querySelectorAll(".reveal:not(.is-visible)").forEach(e => io.observe(e)); } };
+})();
+
 // Evita que textos quebrem o HTML
 function esc(texto) {
   return String(texto ?? "").replace(/[&<>"']/g, function (c) {
@@ -62,7 +78,7 @@ function criarCard(p) {
   const categoria = p.categoria ? `<span class="card-cat">${esc(p.categoria)}</span>` : "";
 
   return `
-    <article class="card" data-id="${p._i}" tabindex="0" role="button" aria-label="Ver detalhes: ${esc(p.titulo)}">
+    <article class="card reveal" data-id="${p._i}" tabindex="0" role="button" aria-label="Ver detalhes: ${esc(p.titulo)}">
       <div class="capa capa--${esc(p.tipo)}">
         <span class="capa-emoji">${info.emoji}</span>
         ${imagemCapa(p, "capa-img")}
@@ -175,6 +191,7 @@ function renderizar() {
   });
 
   grade.innerHTML = lista.map(criarCard).join("");
+  aoRevelar.observarTodos();
 
   if (lista.length > 0) {
     vazio.hidden = true;
