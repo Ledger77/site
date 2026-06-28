@@ -18,6 +18,7 @@ const busca            = document.getElementById("busca");
 const filtrosAcesso    = document.getElementById("filtros-acesso");
 const filtrosCategoria = document.getElementById("filtros-categoria");
 const filtrosTipo      = document.getElementById("filtros-tipo");
+const ordenarSelect    = document.getElementById("ordenar");
 const modal            = document.getElementById("modal");
 const modalConteudo    = document.getElementById("modal-conteudo");
 
@@ -25,6 +26,7 @@ const modalConteudo    = document.getElementById("modal-conteudo");
 let filtroAcesso    = "todos";
 let filtroCategoria = "todas";
 let filtroTipo      = "todos";
+let ordenacao       = "padrao";
 let termoBusca      = "";
 
 // Dá um índice fixo a cada produto (usado para abrir os detalhes)
@@ -197,6 +199,8 @@ function renderizar() {
     return okAcesso && okCategoria && okTipo && okBusca;
   });
 
+  ordenarLista(lista);
+
   grade.innerHTML = lista.map(criarCard).join("");
   aoRevelar.observarTodos();
 
@@ -216,6 +220,29 @@ function montarFiltrosCategoria() {
   let html = `<button class="chip ativo" data-categoria="todas">Todas</button>`;
   html += cats.map(c => `<button class="chip" data-categoria="${esc(c)}">${esc(c)}</button>`).join("");
   filtrosCategoria.innerHTML = html;
+}
+
+// Ordena a lista conforme a opção escolhida no menu "Ordenar por".
+// "padrao" mantém a ordem do arquivo produtos.js. Ano vazio vai para o fim.
+function ordenarLista(lista) {
+  const porTitulo = (a, b) => a.titulo.localeCompare(b.titulo, "pt", { sensitivity: "base", numeric: true });
+  const ano = p => parseInt(p.ano, 10) || null;
+
+  if (ordenacao === "az") {
+    lista.sort(porTitulo);
+  } else if (ordenacao === "za") {
+    lista.sort((a, b) => porTitulo(b, a));
+  } else if (ordenacao === "recente" || ordenacao === "antigo") {
+    const dir = ordenacao === "recente" ? -1 : 1;
+    lista.sort((a, b) => {
+      const aa = ano(a), ab = ano(b);
+      if (aa === null && ab === null) return porTitulo(a, b); // sem ano: desempata por título
+      if (aa === null) return 1;   // produtos sem ano ficam por último
+      if (ab === null) return -1;
+      return aa === ab ? porTitulo(a, b) : (aa - ab) * dir;
+    });
+  }
+  // "padrao": não mexe (a ordem já vem do filtro, igual ao produtos.js)
 }
 
 function montarFiltrosTipo() {
@@ -266,6 +293,11 @@ document.addEventListener("keydown", function (e) {
 
 busca.addEventListener("input", function (e) {
   termoBusca = e.target.value;
+  renderizar();
+});
+
+ordenarSelect.addEventListener("change", function (e) {
+  ordenacao = e.target.value;
   renderizar();
 });
 
