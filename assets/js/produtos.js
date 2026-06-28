@@ -268,7 +268,7 @@ const PRODUTOS = [
 
     detalhes: [
       "Nova versão em videobook de “1984”, agora em formato de quadrinhos, com personagens consistentes e uma produção mais caprichada. O texto é a minha adaptação do romance de Orwell para uma linguagem mais fluida e atual.",
-      "Por ser um trabalho extenso, esta edição é publicada em partes, reunidas em uma playlist que vai crescendo com o tempo. Por enquanto estão disponíveis as Partes 1 e 2 — e novas partes entram assim que ficam prontas.",
+      "Por ser um trabalho extenso, esta edição é publicada em partes, reunidas em uma playlist que vai crescendo com o tempo — novas partes entram assim que ficam prontas.",
       "A história é a mesma do clássico de 1949: em Oceania, sob o olhar do “Grande Irmão”, Winston Smith trabalha reescrevendo o passado para o Partido — até começar a questionar o regime. Um dos maiores alertas já escritos contra o totalitarismo, a vigilância e a manipulação da verdade."
     ],
 

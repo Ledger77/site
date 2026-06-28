@@ -83,6 +83,8 @@ muda, o site atualiza sozinho em 1–2 minutos.
 - ✅ Filtro por **Tipo** (🎧 Audiobook / 🎬 Videobook) — gerado automaticamente a
   partir dos tipos presentes nos produtos (`montarFiltrosTipo` em `app.js`).
 - ✅ Busca por texto (título + descrição).
+- ✅ **Ordenação** (menu "Ordenar por"): Padrão, Título A→Z / Z→A, Mais recente /
+  Mais antigo (por `ano`). Lógica em `ordenarLista` (`app.js`).
 - ✅ **Capas em 16:9** (mesma proporção da miniatura do YouTube): cards e modal
   usam `aspect-ratio: 16/9`, então a imagem aparece **inteira**, sem cortes.
 - ✅ **Modal de detalhes**: clicar no card abre página de detalhes (capa grande,
@@ -112,7 +114,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
 **Ficção (Orwell) — duas versões do mesmo livro:**
 7. **1984 — Edição Completa** — videobook ilustrado (livro inteiro num vídeo) — `https://youtu.be/Uc9Ez1DG88g`
 8. **1984 — Edição em Quadrinhos** — videobook em **partes** (playlist, em quadrinhos,
-   personagens consistentes; hoje Partes 1 e 2, vai crescendo) —
+   personagens consistentes; a playlist cresce sozinha) —
    playlist `PLH27GiXFK5uIJxzroQJR9inaaU5Xw7afy` (capa = Parte 1, `TcImv1wqPIc`)
 
 ---
@@ -212,3 +214,6 @@ No GA4 aparecem em **Aquisição → Campanhas**.
 - Comentários no código em português (seguir o estilo existente).
 - Antes de mexer em produtos, lembrar: editar só `assets/js/produtos.js`.
 - Confirmar com o dono antes de ações difíceis de reverter.
+- **Não citar quantas partes** do "1984 em Quadrinhos" (ou de qualquer obra em
+  partes) estão disponíveis — o dono não quer ter de atualizar isso a cada vídeo
+  novo. Falar só que "é lançado em partes" e que "a playlist cresce com o tempo".
