@@ -89,6 +89,10 @@ muda, o site atualiza sozinho em 1–2 minutos.
   usam `aspect-ratio: 16/9`, então a imagem aparece **inteira**, sem cortes.
 - ✅ **Modal de detalhes**: clicar no card abre página de detalhes (capa grande,
   autor/ano, parágrafos, "Você vai encontrar", temas, sobre o autor, botões de ação).
+- ✅ **Prévia de 1 min**: no modal, o botão "▶ Prévia de 1 min" troca a capa pelo
+  player do YouTube (`youtube-nocookie`, `end=60` → para sozinho aos 60s). O vídeo
+  completo é só pelo botão "Assistir". O ID do vídeo é extraído da imagem/link
+  (`idDoYouTube` em `app.js`); na playlist do 1984, usa a Parte 1.
 - ✅ Seção **Atendimento ao cliente (SAC)** com e-mail e canal.
 - ✅ **Tema escuro** sério/intelectual (variáveis CSS em `styles.css`):
   dourado `--ouro` (#d9a441) como cor principal, vermelho para botões do YouTube.
@@ -96,6 +100,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
 - ✅ **Google Analytics 4** instalado (ID `G-G2G86J7W92`), com eventos personalizados:
   - `ver_produto` → disparado ao abrir o modal de um produto.
   - `clique_produto` → disparado ao clicar em "Assistir/Comprar/Ver canal".
+  - `ver_previa` → disparado ao iniciar a prévia de 1 min.
 - ✅ Logo da coruja no topo (`assets/img/ledger.png`); fallback 🦉 se faltar.
 - ✅ **Acabamento visual** (atmosfera "biblioteca à meia-luz"): luz dourada que
   respira no hero, textura sutil, epígrafe de Nietzsche, traço dourado nos títulos,

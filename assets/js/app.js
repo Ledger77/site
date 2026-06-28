@@ -101,10 +101,24 @@ function criarCard(p) {
     </article>`;
 }
 
+/* Descobre o ID do vídeo do YouTube (11 caracteres) a partir da imagem
+   (img.youtube.com/vi/ID/...) ou do link (youtu.be/ID, watch?v=ID, embed/ID).
+   Para a playlist do 1984 em Quadrinhos, a imagem é a Parte 1 — então a prévia
+   mostra a Parte 1. Retorna null se não houver um vídeo do YouTube. */
+function idDoYouTube(p) {
+  for (const fonte of [p.imagem, p.link]) {
+    if (!fonte) continue;
+    const m = String(fonte).match(/(?:vi\/|v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+    if (m) return m[1];
+  }
+  return null;
+}
+
 /* ----------------------------- Página de detalhes (modal) ----------------------------- */
 function montarModal(p) {
   const info     = TIPOS[p.tipo] || { emoji: "📦", label: "Produto" };
   const ehGratis = p.acesso === "gratis";
+  const videoId  = idDoYouTube(p);
 
   const capa = p.imagem
     ? imagemCapa(p, "modal-capa")
@@ -138,8 +152,15 @@ function montarModal(p) {
     ? `<a class="btn btn-grande btn-yt" href="${esc(p.link)}" target="_blank" rel="noopener">▶ Assistir agora</a>`
     : `<a class="btn btn-grande" href="${esc(p.link)}" target="_blank" rel="noopener">Comprar agora — ${esc(p.preco)}</a>`;
 
+  const botaoPrevia = videoId
+    ? `<button type="button" class="previa-btn" data-video="${esc(videoId)}" aria-label="Ver prévia de 1 minuto">
+         <span class="previa-icone">▶</span>
+         <span class="previa-rotulo">Prévia de 1 min</span>
+       </button>`
+    : "";
+
   return `
-    <div class="modal-topo">${capa}</div>
+    <div class="modal-topo">${capa}${botaoPrevia}</div>
     <div class="modal-corpo">
       <div class="modal-cab">
         ${p.categoria ? `<span class="card-cat">${esc(p.categoria)}</span>` : ""}
@@ -311,6 +332,27 @@ modalConteudo.addEventListener("click", function (e) {
     acao: link.textContent.trim(),
     url: link.href
   });
+});
+
+// Prévia de 1 minuto: ao clicar no botão, troca a capa pelo player do YouTube
+// que começa em 0s e PARA sozinho aos 60s (parâmetro "end=60").
+// Para ver o vídeo completo, a pessoa usa o botão "Assistir" (vai ao YouTube).
+modalConteudo.addEventListener("click", function (e) {
+  const botao = e.target.closest(".previa-btn");
+  if (!botao) return;
+  const id   = botao.dataset.video;
+  const topo = botao.closest(".modal-topo");
+  if (!id || !topo) return;
+
+  const src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}`
+            + `?autoplay=1&start=0&end=60&rel=0&modestbranding=1&playsinline=1`;
+  topo.innerHTML = `<iframe class="modal-video" src="${src}" title="Prévia de 1 minuto"
+      allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+
+  if (typeof gtag === "function") {
+    const titulo = modalConteudo.querySelector(".modal-titulo");
+    gtag("event", "ver_previa", { produto: titulo ? titulo.textContent.trim() : "desconhecido", video: id });
+  }
 });
 
 /* ----------------------------- Início ----------------------------- */

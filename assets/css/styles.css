@@ -273,8 +273,30 @@ a { color: var(--ouro); }
 }
 .modal-fechar:hover { background: rgba(0, 0, 0, .8); }
 
-.modal-topo { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-2); }
+.modal-topo { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-2); }
 .modal-capa { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Botão de prévia (aparece sobre a capa) e o player que o substitui */
+.previa-btn {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  border: none; cursor: pointer; color: #fff; font: inherit; font-weight: 700;
+  background: rgba(0, 0, 0, .30); transition: background .2s ease;
+}
+.previa-btn:hover { background: rgba(0, 0, 0, .46); }
+.previa-icone {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--vermelho-grad); color: #fff; font-size: 1.5rem; padding-left: 4px;
+  box-shadow: 0 12px 30px rgba(224, 56, 43, .45);
+  transition: transform .15s ease;
+}
+.previa-btn:hover .previa-icone { transform: scale(1.08); }
+.previa-rotulo {
+  background: rgba(0, 0, 0, .6); backdrop-filter: blur(4px);
+  padding: 5px 14px; border-radius: 999px; font-size: .85rem;
+}
+.modal-video { width: 100%; height: 100%; border: 0; display: block; }
 .modal-capa--audiobook,
 .modal-capa--videobook,
 .modal-capa--ebook { display: flex; align-items: center; justify-content: center; }
