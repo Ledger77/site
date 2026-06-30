@@ -56,3 +56,25 @@ Adicione novas categorias nessa lista e use o mesmo nome no campo `categoria`.
 
 O site é publicado pelo GitHub Pages a partir da branch **main**. Quando a `main`
 muda, o site se atualiza sozinho em 1–2 minutos.
+
+## 🔄 Como retomar o projeto depois (outro PC, formatação, ou nova IA)
+
+Você **não precisa explicar tudo de novo**. Todo o contexto está guardado no
+arquivo **`CLAUDE.md`** (na raiz), que vive aqui no GitHub junto com o site.
+Qualquer IA (Claude, Cursor, Copilot…) lê esse arquivo e já entende tudo: o que é
+o projeto, como funciona, o que já foi feito e as regras combinadas.
+
+**Para continuar de qualquer computador:**
+
+1. Tenha o login do seu **GitHub** em mãos (guarde num gerenciador de senhas).
+   Repositório: **https://github.com/Ledger77/site**
+2. Abra o projeto na ferramenta que quiser:
+   - **Claude Code na web:** https://claude.ai/code → abra o repositório `Ledger77/site`.
+   - **Cursor / VS Code:** *File → Clone Repository* → cole o link do repositório.
+3. Na primeira mensagem, escreva:
+   > "Leia o `CLAUDE.md` e o `README.md` para entender o projeto e me diga o que entendeu."
+4. Pronto: a IA volta já sabendo de tudo. É só pedir a próxima mudança.
+
+> 💡 A **fonte de verdade** é o que está no GitHub, não a conversa do chat. Por isso
+> a regra de ouro: **a cada mudança no site, o `CLAUDE.md` também é atualizado** —
+> assim a "memória" do projeto nunca fica para trás.
