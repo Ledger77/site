@@ -293,13 +293,13 @@ const PRODUTOS = [
     imagem: "assets/img/capa-1984-ebook.jpeg",
     link: "https://pay.hotmart.com/M106614679D",
     previa: "assets/ebooks/1984-ledger-previa.pdf",   // prévia grátis (20 páginas) — pode ser pública
-    descricao: "Minha adaptação completa de “1984” em e-book, texto na íntegra, disponível em PDF e EPUB.",
+    descricao: "Minha adaptação completa de “1984” em e-book — 394 páginas, disponível em PDF e EPUB.",
 
     autor: "George Orwell",
     ano: "1949",
 
     detalhes: [
-      "Minha adaptação completa de “1984”, de George Orwell, em formato de e-book — o romance na íntegra, com a linguagem modernizada e simplificada por mim, dividida em 9 partes. Disponível em PDF (ideal para ler no computador ou imprimir) e em EPUB (ideal para celular e leitores de e-book).",
+      "Minha adaptação completa de “1984”, de George Orwell, em formato de e-book — o romance na íntegra, com 394 páginas e linguagem modernizada e simplificada por mim, dividido em 9 partes. Disponível em PDF (ideal para ler no computador ou imprimir) e em EPUB (ideal para celular e leitores de e-book).",
       "Em um futuro sombrio, o mundo se divide entre superpotências em guerra perpétua. Em Oceania, o Partido tudo vigia sob o olhar do “Grande Irmão”. Acompanhamos Winston Smith, um funcionário que reescreve o passado a mando do regime — até começar a duvidar de tudo e ousar pensar por conta própria.",
       "Publicado em 1949, “1984” não foi escrito como previsão, mas como advertência: um alerta contra o totalitarismo, a vigilância e a manipulação da verdade. Daqui vêm ideias que usamos até hoje, como “Grande Irmão”, “duplipensar” e “novilíngua”."
     ],
