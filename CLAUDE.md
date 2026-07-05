@@ -241,6 +241,13 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
 3. Abrir um Pull Request da branch → `main` e fazer **squash merge**.
 4. O GitHub Pages publica sozinho em 1–2 min.
 
+> **Se o site não atualizar depois de 5+ min:** o deploy do GitHub Pages pode ter
+> falhado por instabilidade do próprio GitHub (erro genérico "Deployment failed,
+> try again later" — já aconteceu, nada a ver com o conteúdo do site). Ver em
+> `github.com/Ledger77/site` → aba **Actions** se o último "pages build and
+> deployment" está com ❌. Se sim, clicar em **Re-run jobs**; se travar em
+> "queued" por muito tempo, um novo commit (qualquer um) dispara um deploy novo.
+
 > Nota: o repositório foi renomeado de `siteman` para `site`
 > (https://github.com/Ledger77/site). O remote antigo ainda redireciona.
 
