@@ -158,8 +158,10 @@ function montarModal(p) {
       ? `<a class="btn btn-grande btn-yt" href="${esc(p.link)}" target="_blank" rel="noopener">▶ Assistir agora</a>`
       : `<a class="btn btn-grande" href="${esc(p.link)}" target="_blank" rel="noopener">Comprar agora — ${esc(p.preco)}</a>`;
 
-  // Formatos extras para baixar (ex.: EPUB e PDF do mesmo e-book)
-  const formatosExtras = Array.isArray(p.arquivos) && p.arquivos.length
+  // Formatos extras para baixar (ex.: EPUB e PDF do mesmo e-book).
+  // Só para GRÁTIS: em produto exclusivo, arquivo nunca é servido direto por aqui
+  // (ver regra de segurança no CLAUDE.md) — por isso exige ehBaixar, não só p.arquivos.
+  const formatosExtras = ehBaixar && Array.isArray(p.arquivos) && p.arquivos.length
     ? `<h4 class="modal-sub">Formatos disponíveis</h4>
        <div class="modal-formatos">${p.arquivos.map(a =>
          `<a class="formato-btn" href="${esc(a.url)}" download>📄 ${esc(a.formato)}</a>`
