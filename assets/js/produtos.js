@@ -292,7 +292,7 @@ const PRODUTOS = [
     preco: "R$ 3,90",
     imagem: "assets/img/capa-1984-ebook.jpeg",
     link: "https://pay.hotmart.com/M106614679D",
-    previa: "assets/ebooks/1984-ledger-previa.pdf",   // prévia grátis (20 páginas) — pode ser pública
+    previa: "assets/ebooks/1984-ledger-previa.pdf?v=2",   // prévia grátis — ?v=2 força navegador a pegar o PDF novo
     descricao: "Minha adaptação completa de “1984” em e-book — 394 páginas, disponível em PDF e EPUB.",
 
     autor: "George Orwell",
