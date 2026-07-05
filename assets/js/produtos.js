@@ -282,6 +282,42 @@ const PRODUTOS = [
     temas: ["Distopia", "Totalitarismo", "Vigilância", "Liberdade", "Quadrinhos"],
 
     sobreAutor: "George Orwell (1903–1950), pseudônimo de Eric Arthur Blair, foi um escritor e jornalista britânico. Crítico contundente de todo autoritarismo, tornou-se mundialmente conhecido por “A Revolução dos Bichos” e “1984”, livros que viraram símbolos da defesa da liberdade, da verdade e do pensamento independente."
+  },
+
+  {
+    titulo: "1984 — E-book (Adaptação Ledger)",
+    tipo: "ebook",
+    categoria: "Ficção",
+    acesso: "gratis",
+    preco: "",
+    // Sem imagem própria por enquanto: o card usa o fundo roxo + 📚 (ver capa--ebook no CSS).
+    imagem: "",
+    link: "assets/ebooks/1984-ledger.epub",   // formato principal (botão de baixar)
+    arquivos: [                                // formatos extras (aparecem como links no modal)
+      { formato: "EPUB", url: "assets/ebooks/1984-ledger.epub" },
+      { formato: "PDF",  url: "assets/ebooks/1984-ledger.pdf" }
+    ],
+    descricao: "Minha adaptação completa de “1984” em e-book, texto na íntegra, disponível em EPUB e PDF — grátis.",
+
+    autor: "George Orwell",
+    ano: "1949",
+
+    detalhes: [
+      "Minha adaptação completa de “1984”, de George Orwell, em formato de e-book — o romance na íntegra, com a linguagem modernizada e simplificada por mim, dividida em 9 partes. Disponível gratuitamente em EPUB (ideal para celular e leitores de e-book) e em PDF (ideal para ler no computador ou imprimir).",
+      "Em um futuro sombrio, o mundo se divide entre superpotências em guerra perpétua. Em Oceania, o Partido tudo vigia sob o olhar do “Grande Irmão”. Acompanhamos Winston Smith, um funcionário que reescreve o passado a mando do regime — até começar a duvidar de tudo e ousar pensar por conta própria.",
+      "Publicado em 1949, “1984” não foi escrito como previsão, mas como advertência: um alerta contra o totalitarismo, a vigilância e a manipulação da verdade. Daqui vêm ideias que usamos até hoje, como “Grande Irmão”, “duplipensar” e “novilíngua”."
+    ],
+
+    aprendizados: [
+      "O romance completo de “1984”, para ler no seu ritmo",
+      "Como um regime totalitário controla a informação e a memória",
+      "O que significam “Grande Irmão”, “duplipensar” e “novilíngua”",
+      "Por que “1984” continua tão atual"
+    ],
+
+    temas: ["Distopia", "Totalitarismo", "Vigilância", "Liberdade", "Manipulação da verdade"],
+
+    sobreAutor: "George Orwell (1903–1950), pseudônimo de Eric Arthur Blair, foi um escritor e jornalista britânico. Crítico contundente de todo autoritarismo, tornou-se mundialmente conhecido por “A Revolução dos Bichos” e “1984”, livros que viraram símbolos da defesa da liberdade, da verdade e do pensamento independente."
   }
 
 ];

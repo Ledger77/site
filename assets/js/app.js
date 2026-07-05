@@ -64,8 +64,9 @@ function imagemCapa(p, classe) {
 
 /* ----------------------------- Cartões ----------------------------- */
 function criarCard(p) {
-  const info     = TIPOS[p.tipo] || { emoji: "📦", label: "Produto" };
-  const ehGratis = p.acesso === "gratis";
+  const info      = TIPOS[p.tipo] || { emoji: "📦", label: "Produto" };
+  const ehGratis  = p.acesso === "gratis";
+  const ehBaixar  = ehGratis && p.tipo === "ebook"; // e-book grátis = arquivo para baixar, não vídeo
 
   const seloAcesso = ehGratis
     ? `<span class="badge badge-acesso badge-acesso--gratis">🆓 Grátis</span>`
@@ -75,9 +76,11 @@ function criarCard(p) {
     ? `<span class="preco preco--gratis">Grátis</span>`
     : `<span class="preco">${esc(p.preco)}</span>`;
 
-  const botao = ehGratis
-    ? `<a class="btn-comprar btn-assistir" href="${esc(p.link)}" target="_blank" rel="noopener">▶ Assistir</a>`
-    : `<a class="btn-comprar" href="${esc(p.link)}" target="_blank" rel="noopener">Comprar</a>`;
+  const botao = ehBaixar
+    ? `<a class="btn-comprar" href="${esc(p.link)}" download>📥 Baixar</a>`
+    : ehGratis
+      ? `<a class="btn-comprar btn-assistir" href="${esc(p.link)}" target="_blank" rel="noopener">▶ Assistir</a>`
+      : `<a class="btn-comprar" href="${esc(p.link)}" target="_blank" rel="noopener">Comprar</a>`;
 
   const categoria = p.categoria ? `<span class="card-cat">${esc(p.categoria)}</span>` : "";
 
@@ -118,6 +121,7 @@ function idDoYouTube(p) {
 function montarModal(p) {
   const info     = TIPOS[p.tipo] || { emoji: "📦", label: "Produto" };
   const ehGratis = p.acesso === "gratis";
+  const ehBaixar = ehGratis && p.tipo === "ebook"; // e-book grátis = arquivo para baixar, não vídeo
   const videoId  = idDoYouTube(p);
 
   const capa = p.imagem
@@ -148,9 +152,19 @@ function montarModal(p) {
     ? `<span class="badge badge-acesso--gratis modal-selo">🆓 Grátis</span>`
     : `<span class="badge badge-acesso--exclusivo modal-selo">🔒 Exclusivo</span>`;
 
-  const cta = ehGratis
-    ? `<a class="btn btn-grande btn-yt" href="${esc(p.link)}" target="_blank" rel="noopener">▶ Assistir agora</a>`
-    : `<a class="btn btn-grande" href="${esc(p.link)}" target="_blank" rel="noopener">Comprar agora — ${esc(p.preco)}</a>`;
+  const cta = ehBaixar
+    ? `<a class="btn btn-grande" href="${esc(p.link)}" download>📥 Baixar e-book grátis</a>`
+    : ehGratis
+      ? `<a class="btn btn-grande btn-yt" href="${esc(p.link)}" target="_blank" rel="noopener">▶ Assistir agora</a>`
+      : `<a class="btn btn-grande" href="${esc(p.link)}" target="_blank" rel="noopener">Comprar agora — ${esc(p.preco)}</a>`;
+
+  // Formatos extras para baixar (ex.: EPUB e PDF do mesmo e-book)
+  const formatosExtras = Array.isArray(p.arquivos) && p.arquivos.length
+    ? `<h4 class="modal-sub">Formatos disponíveis</h4>
+       <div class="modal-formatos">${p.arquivos.map(a =>
+         `<a class="formato-btn" href="${esc(a.url)}" download>📄 ${esc(a.formato)}</a>`
+       ).join("")}</div>`
+    : "";
 
   const botaoPrevia = videoId
     ? `<button type="button" class="previa-btn" data-video="${esc(videoId)}" aria-label="Ver prévia de 1 minuto">
@@ -176,6 +190,7 @@ function montarModal(p) {
         ${cta}
         <a class="btn btn-grande btn-sec" href="${CANAL}" target="_blank" rel="noopener">Ver canal</a>
       </div>
+      ${formatosExtras}
     </div>`;
 }
 
@@ -292,11 +307,23 @@ function ligarFiltros(container, aoSelecionar) {
 }
 
 /* ----------------------------- Eventos ----------------------------- */
-// Clicar no cartão abre os detalhes (mas deixa os links "Assistir/Comprar" funcionarem)
+// Clicar no cartão abre os detalhes (mas deixa os links "Assistir/Comprar/Baixar" funcionarem)
 grade.addEventListener("click", function (e) {
   if (e.target.closest("a")) return;
   const card = e.target.closest(".card");
   if (card) abrirModal(Number(card.dataset.id));
+});
+
+// Analytics: rastreia cliques em "Assistir/Comprar/Baixar" direto no card (sem abrir o modal)
+grade.addEventListener("click", function (e) {
+  const link = e.target.closest("a");
+  if (!link || typeof gtag !== "function") return;
+  const tituloEl = e.target.closest(".card")?.querySelector(".card-titulo");
+  gtag("event", "clique_produto", {
+    produto: tituloEl ? tituloEl.textContent.trim() : "desconhecido",
+    acao: link.textContent.trim(),
+    url: link.href
+  });
 });
 grade.addEventListener("keydown", function (e) {
   if (e.key !== "Enter" && e.key !== " ") return;
