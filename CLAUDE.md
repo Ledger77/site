@@ -156,8 +156,8 @@ muda, o site atualiza sozinho em 1–2 minutos.
   zoom suave na capa dos cards e **animações de entrada** (revelar ao rolar, via
   IntersectionObserver nativo). Respeita `prefers-reduced-motion`.
 
-### Produtos atuais (9) — todos grátis
-**Filosofia (Nietzsche) — YouTube:**
+### Produtos atuais (9) — 8 grátis + 1 exclusivo
+**Filosofia (Nietzsche) — YouTube, grátis:**
 1. **Humano, Demasiado Humano** (1878) — audiobook — `https://youtu.be/kyKFWEBFe0w`
 2. **Assim Falou Zaratustra** (1883) — videobook ilustrado — `https://youtu.be/VhkXzWzRIyo`
 3. **Aurora** (1881) — audiobook — `https://youtu.be/Oy8kJapGQSo`
@@ -166,15 +166,28 @@ muda, o site atualiza sozinho em 1–2 minutos.
 6. **Sobre Verdade e Mentira** (1873) — audiobook — `https://youtu.be/JHKta2RN280`
 
 **Ficção (Orwell) — três formatos do mesmo livro:**
-7. **1984 — Edição Completa** — videobook ilustrado (livro inteiro num vídeo) — `https://youtu.be/Uc9Ez1DG88g`
-8. **1984 — Edição em Quadrinhos** — videobook em **partes** (playlist, em quadrinhos,
-   personagens consistentes; a playlist cresce sozinha) —
+7. **1984 — Edição Completa** — videobook ilustrado, grátis (livro inteiro num vídeo) — `https://youtu.be/Uc9Ez1DG88g`
+8. **1984 — Edição em Quadrinhos** — videobook em **partes**, grátis (playlist, em
+   quadrinhos, personagens consistentes; a playlist cresce sozinha) —
    playlist `PLH27GiXFK5uIJxzroQJR9inaaU5Xw7afy` (capa = Parte 1, `TcImv1wqPIc`)
-9. **1984 — E-book (Adaptação Ledger)** — e-book, texto completo, adaptação própria
-   do dono (não é só narração/vídeo, é o **livro inteiro escrito**) — grátis, baixa
-   direto do repositório em **PDF e EPUB** (`assets/ebooks/1984-ledger.pdf` / `.epub`,
-   PDF = versão própria do dono, 394 páginas). Capa própria em
-   `assets/img/capa-1984-ebook.jpeg` (livro com pirâmide-olho + câmeras, fundo laranja).
+9. **1984 — E-book (Adaptação Ledger)** — 🔒 **EXCLUSIVO** (primeiro produto pago do
+   site). Texto completo em PDF e EPUB, adaptação própria do dono. `link` aponta
+   para o checkout da Hotmart: `https://pay.hotmart.com/M106614679D`. Capa própria
+   em `assets/img/capa-1984-ebook.jpeg`.
+   - ⚠️ **Campo `preco` ainda vazio** (`""`) — falta o dono informar o valor.
+     Assim que ele disser, preencher `preco` em `produtos.js` (ex.: `"R$ 29,90"`).
+   - **Histórico de segurança:** este produto **era grátis** até o dono decidir
+     monetizá-lo. Os arquivos (`assets/ebooks/1984-ledger.pdf`/`.epub`) foram
+     **removidos do repositório** nesse momento (só existiam porque era grátis —
+     seguindo a regra de segurança da seção 2). Ficam hospedados só dentro da
+     Hotmart a partir de agora. **Atenção:** como o repositório é público e esses
+     arquivos ficaram acessíveis por um tempo (enquanto o produto era grátis, de
+     propósito), cópias feitas nesse período não podem ser "revogadas" — isso é
+     esperado (é assim que qualquer transição grátis→pago funciona) e não é uma
+     falha a corrigir. O histórico de commits do Git também mantém essas versões
+     antigas tecnicamente acessíveis (não removemos do histórico — isso exigiria
+     reescrever o histórico do repositório, uma operação arriscada; só fazer se o
+     dono pedir explicitamente).
 
 ---
 
@@ -241,7 +254,10 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
       `assets/img/capa-1984-ebook.jpeg`; campo `imagem` do produto já aponta pra lá.
 - [ ] Conforme o dono publica novas **partes do 1984 em quadrinhos**, nada a fazer
       no site: a playlist atualiza sozinha. (Trocar a capa só se ele quiser.)
-- [ ] Quando houver produto pago, criar o 1º **exclusivo** com link da Hotmart.
+- [x] ~~Quando houver produto pago, criar o 1º exclusivo com link da Hotmart~~ →
+      **feito**: "1984 — E-book" virou exclusivo (`https://pay.hotmart.com/M106614679D`).
+- [ ] **Falta o preço do "1984 — E-book"** — `preco` está `""` em `produtos.js`.
+      Perguntar ao dono e preencher (ex.: `"R$ 29,90"`).
 - [ ] (Opcional) Domínio próprio em vez de `ledger77.github.io/site`.
 - [ ] Adicionar novas obras assim que o dono postar (pedir título + tipo de cada uma).
 
