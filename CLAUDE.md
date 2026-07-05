@@ -85,6 +85,24 @@ muda, o site atualiza sozinho em 1–2 minutos.
   É uma contagem de **cliques no link**, não uma confirmação de que o arquivo foi
   aberto/lido — mas é o proxy padrão usado em sites estáticos sem backend.
 
+### 🔒 Segurança dos produtos EXCLUSIVOS (regra crítica, não pular)
+- Este repositório é **público** (obrigatório para o GitHub Pages grátis). Isso
+  significa que **qualquer arquivo colocado aqui** (em `assets/` ou em qualquer
+  pasta) fica **acessível a qualquer pessoa**, sem senha — mesmo sem ninguém
+  "hackear" nada. É assim que repositórios públicos funcionam.
+- Isso é **ok e intencional** para conteúdo grátis (como o e-book do 1984,
+  propositalmente público).
+- **Mas nunca faça isso com um produto `acesso: "exclusivo"`.** O arquivo de um
+  produto pago (e-book, PDF, o que for) **NUNCA** deve ser commitado neste
+  repositório — ficaria disponível de graça pra qualquer um, sem precisar
+  comprar. O arquivo do produto exclusivo deve ficar **hospedado dentro da
+  Hotmart** (área de membros dela, que só libera após pagamento confirmado); o
+  `link` do produto aqui no site aponta só para o **checkout da Hotmart**, nunca
+  para um arquivo local.
+- Se o dono perguntar sobre segurança/vazamento de produtos pagos, é esse o
+  ponto a explicar: o risco não é "hackearem o site", é **colocar sem querer**
+  o arquivo pago num lugar público (aqui) em vez de dentro da Hotmart.
+
 ### Método de conteúdo do canal (importante p/ cadastrar produtos)
 - **Audiobook** → o livro inteiro num vídeo só (`link` = vídeo do YouTube).
 - **Videobook (vídeo ilustrado)** → pode ser:
