@@ -188,6 +188,12 @@ muda, o site atualiza sozinho em 1–2 minutos.
      antigas tecnicamente acessíveis (não removemos do histórico — isso exigiria
      reescrever o histórico do repositório, uma operação arriscada; só fazer se o
      dono pedir explicitamente).
+   - **Decisão registrada (perguntado ao dono):** ele optou por **deixar o
+     histórico do Git como está** — risco considerado baixo por enquanto (0 forks,
+     0 watchers no repositório, ninguém de fora observando). As outras opções
+     (reescrever o histórico ou recomeçar o repositório do zero) ficam disponíveis
+     se o site crescer e isso passar a preocupar de verdade — não fazer nenhuma
+     das duas sem o dono pedir de novo.
 
 ---
 
