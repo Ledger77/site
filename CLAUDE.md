@@ -170,12 +170,10 @@ muda, o site atualiza sozinho em 1–2 minutos.
 8. **1984 — Edição em Quadrinhos** — videobook em **partes**, grátis (playlist, em
    quadrinhos, personagens consistentes; a playlist cresce sozinha) —
    playlist `PLH27GiXFK5uIJxzroQJR9inaaU5Xw7afy` (capa = Parte 1, `TcImv1wqPIc`)
-9. **1984 — E-book (Adaptação Ledger)** — 🔒 **EXCLUSIVO** (primeiro produto pago do
-   site). Texto completo em PDF e EPUB, adaptação própria do dono. `link` aponta
-   para o checkout da Hotmart: `https://pay.hotmart.com/M106614679D`. Capa própria
-   em `assets/img/capa-1984-ebook.jpeg`.
-   - ⚠️ **Campo `preco` ainda vazio** (`""`) — falta o dono informar o valor.
-     Assim que ele disser, preencher `preco` em `produtos.js` (ex.: `"R$ 29,90"`).
+9. **1984 — E-book (Adaptação Ledger)** — 🔒 **EXCLUSIVO**, **R$ 3,90** (primeiro
+   produto pago do site). Texto completo em PDF e EPUB, adaptação própria do
+   dono. `link` aponta para o checkout da Hotmart: `https://pay.hotmart.com/M106614679D`.
+   Capa própria em `assets/img/capa-1984-ebook.jpeg`.
    - **Histórico de segurança:** este produto **era grátis** até o dono decidir
      monetizá-lo. Os arquivos (`assets/ebooks/1984-ledger.pdf`/`.epub`) foram
      **removidos do repositório** nesse momento (só existiam porque era grátis —
@@ -261,9 +259,8 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
 - [ ] Conforme o dono publica novas **partes do 1984 em quadrinhos**, nada a fazer
       no site: a playlist atualiza sozinha. (Trocar a capa só se ele quiser.)
 - [x] ~~Quando houver produto pago, criar o 1º exclusivo com link da Hotmart~~ →
-      **feito**: "1984 — E-book" virou exclusivo (`https://pay.hotmart.com/M106614679D`).
-- [ ] **Falta o preço do "1984 — E-book"** — `preco` está `""` em `produtos.js`.
-      Perguntar ao dono e preencher (ex.: `"R$ 29,90"`).
+      **feito**: "1984 — E-book" virou exclusivo, **R$ 3,90**
+      (`https://pay.hotmart.com/M106614679D`).
 - [ ] (Opcional) Domínio próprio em vez de `ledger77.github.io/site`.
 - [ ] Adicionar novas obras assim que o dono postar (pedir título + tipo de cada uma).
 

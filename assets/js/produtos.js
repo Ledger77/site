@@ -289,7 +289,7 @@ const PRODUTOS = [
     tipo: "ebook",
     categoria: "Ficção",
     acesso: "exclusivo",
-    preco: "",   // TODO: preencher assim que o dono informar o valor
+    preco: "R$ 3,90",
     imagem: "assets/img/capa-1984-ebook.jpeg",
     link: "https://pay.hotmart.com/M106614679D",
     descricao: "Minha adaptação completa de “1984” em e-book, texto na íntegra, disponível em PDF e EPUB.",
