@@ -138,6 +138,11 @@ muda, o site atualiza sozinho em 1–2 minutos.
   player do YouTube (`youtube-nocookie`, `end=60` → para sozinho aos 60s). O vídeo
   completo é só pelo botão "Assistir". O ID do vídeo é extraído da imagem/link
   (`idDoYouTube` em `app.js`); na playlist do 1984, usa a Parte 1.
+- ✅ **Prévia em PDF** (para e-books, inclusive exclusivos): campo opcional
+  `previa` no produto → botão "📖 Ler prévia grátis" no modal, abre o PDF numa
+  aba nova. Pensada para e-books **exclusivos** mostrarem algumas páginas de
+  graça antes da compra (diferente do arquivo completo, essa prévia pode ficar
+  pública no repositório).
 - ✅ Seção **Atendimento ao cliente (SAC)** com e-mail e canal.
 - ✅ **Tema escuro** sério/intelectual (variáveis CSS em `styles.css`):
   dourado `--ouro` (#d9a441) como cor principal, vermelho para botões do YouTube.
@@ -174,6 +179,14 @@ muda, o site atualiza sozinho em 1–2 minutos.
    produto pago do site). Texto completo em PDF e EPUB, adaptação própria do
    dono. `link` aponta para o checkout da Hotmart: `https://pay.hotmart.com/M106614679D`.
    Capa própria em `assets/img/capa-1984-ebook.jpeg`.
+   - **Prévia grátis (20 páginas):** botão "📖 Ler prévia grátis" no modal, ao lado
+     de "Comprar agora". Usa o campo opcional `previa` (caminho do PDF), lido em
+     `montarModal()` no `app.js`. Arquivo em `assets/ebooks/1984-ledger-previa.pdf`.
+     **Diferente do arquivo completo:** esta prévia é só um recorte da obra e
+     **pode sim ficar pública** no repositório — é a "vitrine" antes da compra
+     (tipo "Look Inside"), não o produto inteiro. A regra de segurança da seção 2
+     (nunca commitar arquivo exclusivo) vale para o **arquivo completo**, não para
+     prévias curtas como esta.
    - **Histórico de segurança:** este produto **era grátis** até o dono decidir
      monetizá-lo. Os arquivos (`assets/ebooks/1984-ledger.pdf`/`.epub`) foram
      **removidos do repositório** nesse momento (só existiam porque era grátis —

@@ -175,6 +175,12 @@ function montarModal(p) {
        </button>`
     : "";
 
+  // Prévia em PDF de algumas páginas (ex.: e-book exclusivo) — sempre pública,
+  // mesmo em produto pago: é a "vitrine" antes da compra, só um recorte da obra.
+  const previaLeitura = p.previa
+    ? `<a class="btn btn-grande btn-sec" href="${esc(p.previa)}" target="_blank" rel="noopener">📖 Ler prévia grátis</a>`
+    : "";
+
   return `
     <div class="modal-topo">${capa}${botaoPrevia}</div>
     <div class="modal-corpo">
@@ -190,6 +196,7 @@ function montarModal(p) {
       ${sobreAutor}
       <div class="modal-acoes">
         ${cta}
+        ${previaLeitura}
         <a class="btn btn-grande btn-sec" href="${CANAL}" target="_blank" rel="noopener">Ver canal</a>
       </div>
       ${formatosExtras}
