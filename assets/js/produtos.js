@@ -290,8 +290,7 @@ const PRODUTOS = [
     categoria: "Ficção",
     acesso: "gratis",
     preco: "",
-    // Capa própria pendente (o dono vai subir); por ora cai no fundo roxo + 📚 (capa--ebook no CSS).
-    imagem: "",
+    imagem: "assets/img/capa-1984-ebook.jpeg",
     link: "assets/ebooks/1984-ledger.pdf",    // formato principal (botão "Baixar e-book grátis")
     arquivos: [                                // formatos extras (aparecem como links no modal)
       { formato: "PDF",  url: "assets/ebooks/1984-ledger.pdf" },
