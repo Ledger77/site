@@ -326,6 +326,18 @@ a { color: var(--ouro); }
 }
 .modal-acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 
+/* Formatos extras de download (ex.: EPUB e PDF do mesmo e-book) */
+.modal-formatos { display: flex; flex-wrap: wrap; gap: 10px; }
+.formato-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--superficie-2); border: 1px solid var(--borda);
+  color: var(--texto); text-decoration: none;
+  font-weight: 600; font-size: .9rem;
+  padding: 9px 16px; border-radius: 999px;
+  transition: border-color .15s ease, color .15s ease;
+}
+.formato-btn:hover { border-color: var(--ouro); color: var(--ouro-claro); }
+
 /* ----------------------------- Atendimento ao cliente ----------------------------- */
 .atendimento {
   background: var(--bg-2);
