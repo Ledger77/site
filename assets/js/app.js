@@ -96,6 +96,7 @@ function criarCard(p) {
         ${categoria}
         <h3 class="card-titulo">${esc(p.titulo)}</h3>
         <p class="card-desc">${esc(p.descricao)}</p>
+        <button type="button" class="btn-detalhes">🔍 Ver detalhes</button>
         <div class="card-rodape">
           ${preco}
           ${botao}

@@ -228,6 +228,16 @@ a { color: var(--ouro); }
 .card-titulo { font-size: 1.15rem; margin-bottom: 8px; color: var(--texto); }
 .card-desc { color: var(--suave); font-size: .92rem; flex: 1; margin-bottom: 16px; }
 
+.btn-detalhes {
+  display: block; width: 100%;
+  background: transparent; border: 1px solid var(--borda);
+  color: var(--suave); font: inherit; font-weight: 600; font-size: .85rem;
+  padding: 9px 14px; border-radius: 999px;
+  cursor: pointer; margin-bottom: 14px;
+  transition: border-color .15s ease, color .15s ease;
+}
+.btn-detalhes:hover, .btn-detalhes:focus-visible { border-color: var(--ouro); color: var(--ouro-claro); }
+
 .card-rodape { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .preco { font-weight: 700; font-size: 1.15rem; color: var(--texto); }
 .preco--gratis { color: var(--verde); }

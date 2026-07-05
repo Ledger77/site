@@ -134,6 +134,9 @@ muda, o site atualiza sozinho em 1–2 minutos.
   usam `aspect-ratio: 16/9`, então a imagem aparece **inteira**, sem cortes.
 - ✅ **Modal de detalhes**: clicar no card abre página de detalhes (capa grande,
   autor/ano, parágrafos, "Você vai encontrar", temas, sobre o autor, botões de ação).
+  Além de clicar em qualquer parte do card, também há um botão explícito
+  **"🔍 Ver detalhes"** (não é link — por isso já cai no mesmo clique do card,
+  sem precisar de JS extra) para deixar claro que dá pra ver mais antes de comprar.
 - ✅ **Prévia de 1 min**: no modal, o botão "▶ Prévia de 1 min" troca a capa pelo
   player do YouTube (`youtube-nocookie`, `end=60` → para sozinho aos 60s). O vídeo
   completo é só pelo botão "Assistir". O ID do vídeo é extraído da imagem/link
