@@ -222,8 +222,23 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
 - [ ] Quando houver produto pago, criar o 1º **exclusivo** com link da Hotmart.
 - [ ] (Opcional) Domínio próprio em vez de `ledger77.github.io/site`.
 - [ ] Adicionar novas obras assim que o dono postar (pedir título + tipo de cada uma).
-- [ ] (Opcional) Se o dono quiser, adicionar uma **capa própria** para o e-book do
-      1984 (hoje usa o gradiente roxo + 📚 padrão, sem capa customizada).
+- [ ] **⚠️ Trocar o PDF do e-book "1984"** pelo PDF próprio do dono (ele tem um com
+      aparência melhor que a versão gerada pela IA a partir do EPUB). O dono não
+      conseguiu anexar esse PDF no chat (mesmo problema de antes). Como resolver:
+      ele mesmo sobe pelo GitHub (sem precisar da IA) — entra em `assets/ebooks/`
+      no site do GitHub, **Add file → Upload files**, escolhe o PDF, garante que o
+      nome do arquivo seja **exatamente `1984-ledger.pdf`** (para substituir o
+      atual automaticamente) e clica em **Commit changes**. Assim que ele subir,
+      pronto — nada mais precisa mudar no código.
+- [ ] **⚠️ Capa do e-book "1984"**: o dono enviou uma arte de capa (livro com
+      pirâmide-olho + câmeras, fundo laranja) **colada direto no chat**, mas
+      imagens coladas assim (sem ser "anexo de arquivo") não ficam acessíveis
+      para a IA copiar pro repositório. Pedir para o dono subir essa imagem
+      direto pelo GitHub: pasta `assets/img/`, **Add file → Upload files**,
+      qualquer nome (ex.: `capa-1984-ebook.jpg`) — depois a IA só precisa apontar
+      o campo `imagem` desse produto em `produtos.js` para o arquivo. Importante:
+      essa capa é só para o **card/modal do site**, não deve ser embutida no
+      PDF/EPUB.
 
 ---
 
