@@ -154,9 +154,9 @@ muda, o site atualiza sozinho em 1–2 minutos.
    playlist `PLH27GiXFK5uIJxzroQJR9inaaU5Xw7afy` (capa = Parte 1, `TcImv1wqPIc`)
 9. **1984 — E-book (Adaptação Ledger)** — e-book, texto completo, adaptação própria
    do dono (não é só narração/vídeo, é o **livro inteiro escrito**) — grátis, baixa
-   direto do repositório em **EPUB e PDF** (`assets/ebooks/1984-ledger.epub` / `.pdf`).
-   PDF gerado a partir do EPUB (conversão feita pela IA com WeasyPrint, já que o
-   dono não tinha um PDF pronto pra anexar).
+   direto do repositório em **PDF e EPUB** (`assets/ebooks/1984-ledger.pdf` / `.epub`,
+   PDF = versão própria do dono, 394 páginas). Capa própria em
+   `assets/img/capa-1984-ebook.jpeg` (livro com pirâmide-olho + câmeras, fundo laranja).
 
 ---
 
@@ -217,28 +217,15 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
 - [x] ~~Adicionar mais vídeos do canal~~ → **feito**: 9 produtos no ar (6 Nietzsche
       + 2 videobooks do 1984 + 1 e-book do 1984).
 - [x] ~~Primeiro e-book para download~~ → **feito**: "1984 — E-book" (EPUB + PDF).
+- [x] ~~Trocar o PDF do e-book "1984" pelo PDF próprio do dono~~ → **feito**: ele
+      subiu direto pelo GitHub em `assets/ebooks/1984-ledger.pdf` (394 páginas).
+- [x] ~~Capa do e-book "1984"~~ → **feito**: dono subiu pelo GitHub em
+      `assets/img/capa-1984-ebook.jpeg`; campo `imagem` do produto já aponta pra lá.
 - [ ] Conforme o dono publica novas **partes do 1984 em quadrinhos**, nada a fazer
       no site: a playlist atualiza sozinha. (Trocar a capa só se ele quiser.)
 - [ ] Quando houver produto pago, criar o 1º **exclusivo** com link da Hotmart.
 - [ ] (Opcional) Domínio próprio em vez de `ledger77.github.io/site`.
 - [ ] Adicionar novas obras assim que o dono postar (pedir título + tipo de cada uma).
-- [ ] **⚠️ Trocar o PDF do e-book "1984"** pelo PDF próprio do dono (ele tem um com
-      aparência melhor que a versão gerada pela IA a partir do EPUB). O dono não
-      conseguiu anexar esse PDF no chat (mesmo problema de antes). Como resolver:
-      ele mesmo sobe pelo GitHub (sem precisar da IA) — entra em `assets/ebooks/`
-      no site do GitHub, **Add file → Upload files**, escolhe o PDF, garante que o
-      nome do arquivo seja **exatamente `1984-ledger.pdf`** (para substituir o
-      atual automaticamente) e clica em **Commit changes**. Assim que ele subir,
-      pronto — nada mais precisa mudar no código.
-- [ ] **⚠️ Capa do e-book "1984"**: o dono enviou uma arte de capa (livro com
-      pirâmide-olho + câmeras, fundo laranja) **colada direto no chat**, mas
-      imagens coladas assim (sem ser "anexo de arquivo") não ficam acessíveis
-      para a IA copiar pro repositório. Pedir para o dono subir essa imagem
-      direto pelo GitHub: pasta `assets/img/`, **Add file → Upload files**,
-      qualquer nome (ex.: `capa-1984-ebook.jpg`) — depois a IA só precisa apontar
-      o campo `imagem` desse produto em `produtos.js` para o arquivo. Importante:
-      essa capa é só para o **card/modal do site**, não deve ser embutida no
-      PDF/EPUB.
 
 ---
 
