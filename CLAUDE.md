@@ -276,7 +276,7 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
       + 2 videobooks do 1984 + 1 e-book do 1984).
 - [x] ~~Primeiro e-book para download~~ → **feito**: "1984 — E-book" (EPUB + PDF).
 - [x] ~~Trocar o PDF do e-book "1984" pelo PDF próprio do dono~~ → **feito**: ele
-      subiu direto pelo GitHub em `assets/ebooks/1984-ledger.pdf` (394 páginas).
+      subiu direto pelo GitHub em `assets/ebooks/1984-ledger.pdf` (401 páginas).
 - [x] ~~Capa do e-book "1984"~~ → **feito**: dono subiu pelo GitHub em
       `assets/img/capa-1984-ebook.jpeg`; campo `imagem` do produto já aponta pra lá.
 - [ ] Conforme o dono publica novas **partes do 1984 em quadrinhos**, nada a fazer
