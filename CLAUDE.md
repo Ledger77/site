@@ -164,7 +164,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
   zoom suave na capa dos cards e **animações de entrada** (revelar ao rolar, via
   IntersectionObserver nativo). Respeita `prefers-reduced-motion`.
 
-### Produtos atuais (9) — 8 grátis + 1 exclusivo
+### Produtos atuais (8) — 7 grátis + 1 exclusivo
 **Filosofia (Nietzsche) — YouTube, grátis:**
 1. **Humano, Demasiado Humano** (1878) — audiobook — `https://youtu.be/kyKFWEBFe0w`
 2. **Assim Falou Zaratustra** (1883) — videobook ilustrado — `https://youtu.be/VhkXzWzRIyo`
@@ -173,12 +173,9 @@ muda, o site atualiza sozinho em 1–2 minutos.
 5. **O Nascimento da Tragédia** (1872) — audiobook — `https://youtu.be/hulz3ebGFL0`
 6. **Sobre Verdade e Mentira** (1873) — audiobook — `https://youtu.be/JHKta2RN280`
 
-**Ficção (Orwell) — três formatos do mesmo livro:**
+**Ficção (Orwell):**
 7. **1984 — Edição Completa** — videobook ilustrado, grátis (livro inteiro num vídeo) — `https://youtu.be/Uc9Ez1DG88g`
-8. **1984 — Edição em Quadrinhos** — videobook em **partes**, grátis (playlist, em
-   quadrinhos, personagens consistentes; a playlist cresce sozinha) —
-   playlist `PLH27GiXFK5uIJxzroQJR9inaaU5Xw7afy` (capa = Parte 1, `TcImv1wqPIc`)
-9. **1984 — E-book (Adaptação Ledger)** — 🔒 **EXCLUSIVO**, **R$ 3,90** (primeiro
+8. **1984 — E-book (Adaptação Ledger)** — 🔒 **EXCLUSIVO**, **R$ 3,90** (primeiro
    produto pago do site). Texto completo em PDF e EPUB, adaptação própria do
    dono. `link` aponta para o checkout da Hotmart: `https://pay.hotmart.com/M106614679D`.
    Capa própria em `assets/img/capa-1984-ebook.jpeg`.
@@ -272,15 +269,13 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
 ## 6. Pendências / próximos passos
 
 - [x] ~~Logo no lugar errado~~ → **feito**: movida para `assets/img/ledger.png`.
-- [x] ~~Adicionar mais vídeos do canal~~ → **feito**: 9 produtos no ar (6 Nietzsche
-      + 2 videobooks do 1984 + 1 e-book do 1984).
+- [x] ~~Adicionar mais vídeos do canal~~ → **feito**: 8 produtos no ar (6 Nietzsche
+      + 1 videobook do 1984 + 1 e-book do 1984).
 - [x] ~~Primeiro e-book para download~~ → **feito**: "1984 — E-book" (EPUB + PDF).
 - [x] ~~Trocar o PDF do e-book "1984" pelo PDF próprio do dono~~ → **feito**: ele
       subiu direto pelo GitHub em `assets/ebooks/1984-ledger.pdf` (401 páginas).
 - [x] ~~Capa do e-book "1984"~~ → **feito**: dono subiu pelo GitHub em
       `assets/img/capa-1984-ebook.jpeg`; campo `imagem` do produto já aponta pra lá.
-- [ ] Conforme o dono publica novas **partes do 1984 em quadrinhos**, nada a fazer
-      no site: a playlist atualiza sozinha. (Trocar a capa só se ele quiser.)
 - [x] ~~Quando houver produto pago, criar o 1º exclusivo com link da Hotmart~~ →
       **feito**: "1984 — E-book" virou exclusivo, **R$ 3,90**
       (`https://pay.hotmart.com/M106614679D`).
@@ -320,6 +315,6 @@ No GA4 aparecem em **Aquisição → Campanhas**.
 - Comentários no código em português (seguir o estilo existente).
 - Antes de mexer em produtos, lembrar: editar só `assets/js/produtos.js`.
 - Confirmar com o dono antes de ações difíceis de reverter.
-- **Não citar quantas partes** do "1984 em Quadrinhos" (ou de qualquer obra em
-  partes) estão disponíveis — o dono não quer ter de atualizar isso a cada vídeo
-  novo. Falar só que "é lançado em partes" e que "a playlist cresce com o tempo".
+- **Não citar quantas partes** de uma obra lançada em partes (playlist) estão
+  disponíveis — o dono não quer ter de atualizar isso a cada vídeo novo. Falar só
+  que "é lançado em partes" e que "a playlist cresce com o tempo".

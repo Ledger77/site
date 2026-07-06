@@ -254,37 +254,6 @@ const PRODUTOS = [
   },
 
   {
-    titulo: "1984 — Edição em Quadrinhos",
-    tipo: "videobook",
-    categoria: "Ficção",
-    acesso: "gratis",
-    preco: "",
-    imagem: "https://img.youtube.com/vi/TcImv1wqPIc/maxresdefault.jpg",
-    link: "https://youtube.com/playlist?list=PLH27GiXFK5uIJxzroQJR9inaaU5Xw7afy",
-    descricao: "Nova adaptação de “1984” em quadrinhos, com personagens consistentes — lançada em partes.",
-
-    autor: "George Orwell",
-    ano: "1949",
-
-    detalhes: [
-      "Nova versão em videobook de “1984”, agora em formato de quadrinhos, com personagens consistentes e uma produção mais caprichada. O texto é a minha adaptação do romance de Orwell para uma linguagem mais fluida e atual.",
-      "Por ser um trabalho extenso, esta edição é publicada em partes, reunidas em uma playlist que vai crescendo com o tempo — novas partes entram assim que ficam prontas.",
-      "A história é a mesma do clássico de 1949: em Oceania, sob o olhar do “Grande Irmão”, Winston Smith trabalha reescrevendo o passado para o Partido — até começar a questionar o regime. Um dos maiores alertas já escritos contra o totalitarismo, a vigilância e a manipulação da verdade."
-    ],
-
-    aprendizados: [
-      "A história de “1984” em formato de quadrinhos ilustrados",
-      "Como o Partido controla a verdade, a língua e a memória",
-      "Os conceitos de “Grande Irmão”, “duplipensar” e “novilíngua”",
-      "Uma saga lançada em partes, fácil de acompanhar aos poucos"
-    ],
-
-    temas: ["Distopia", "Totalitarismo", "Vigilância", "Liberdade", "Quadrinhos"],
-
-    sobreAutor: "George Orwell (1903–1950), pseudônimo de Eric Arthur Blair, foi um escritor e jornalista britânico. Crítico contundente de todo autoritarismo, tornou-se mundialmente conhecido por “A Revolução dos Bichos” e “1984”, livros que viraram símbolos da defesa da liberdade, da verdade e do pensamento independente."
-  },
-
-  {
     titulo: "1984 — E-book (Adaptação Ledger)",
     tipo: "ebook",
     categoria: "Ficção",

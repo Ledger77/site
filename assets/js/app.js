@@ -107,8 +107,9 @@ function criarCard(p) {
 
 /* Descobre o ID do vídeo do YouTube (11 caracteres) a partir da imagem
    (img.youtube.com/vi/ID/...) ou do link (youtu.be/ID, watch?v=ID, embed/ID).
-   Para a playlist do 1984 em Quadrinhos, a imagem é a Parte 1 — então a prévia
-   mostra a Parte 1. Retorna null se não houver um vídeo do YouTube. */
+   Para um produto cujo link é uma playlist, a imagem deve ser a miniatura de
+   um vídeo específico da playlist — é dali que a prévia tira o ID.
+   Retorna null se não houver um vídeo do YouTube. */
 function idDoYouTube(p) {
   for (const fonte of [p.imagem, p.link]) {
     if (!fonte) continue;
