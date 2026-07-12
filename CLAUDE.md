@@ -166,7 +166,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
   zoom suave na capa dos cards e **animações de entrada** (revelar ao rolar, via
   IntersectionObserver nativo). Respeita `prefers-reduced-motion`.
 
-### Produtos atuais (10) — 8 grátis + 2 exclusivos
+### Produtos atuais (11) — 9 grátis + 2 exclusivos
 **Filosofia (Nietzsche) — YouTube, grátis:**
 1. **Humano, Demasiado Humano** (1878) — audiobook — `https://youtu.be/kyKFWEBFe0w`
 2. **Assim Falou Zaratustra** (1883) — videobook ilustrado — `https://youtu.be/VhkXzWzRIyo`
@@ -174,6 +174,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
 4. **A Genealogia da Moral** (1887) — audiobook — `https://youtu.be/wJfQFefWQnM`
 5. **O Nascimento da Tragédia** (1872) — audiobook — `https://youtu.be/hulz3ebGFL0`
 6. **Sobre Verdade e Mentira** (1873) — audiobook — `https://youtu.be/JHKta2RN280`
+7. **A Gaia Ciência** (1882) — audiobook — `https://youtu.be/5hng5Uc_jBY`
 
 **Ficção (Orwell):**
 7. **1984 — Edição Completa** — videobook ilustrado, grátis (livro inteiro num vídeo) — `https://youtu.be/Uc9Ez1DG88g`

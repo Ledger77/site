@@ -316,6 +316,38 @@ const PRODUTOS = [
     temas: ["Morte de Deus", "Eterno retorno", "Moral", "Arte e conhecimento", "Niilismo", "Aforismos", "Alegria e afirmação da vida"],
 
     sobreAutor: "Friedrich Nietzsche (1844–1900) foi um dos filósofos mais influentes da história. Conhecido pelo estilo provocador e pela crítica radical à moral tradicional, deixou obras como “Assim Falou Zaratustra”, “Para Além do Bem e do Mal” e “A Genealogia da Moral”."
+  },
+
+  {
+    titulo: "A Gaia Ciência",
+    tipo: "audiobook",
+    categoria: "Filosofia",
+    acesso: "gratis",
+    preco: "",
+    imagem: "https://img.youtube.com/vi/5hng5Uc_jBY/maxresdefault.jpg",
+    link: "https://youtu.be/5hng5Uc_jBY",
+    descricao: "Audiobook de “A Gaia Ciência” (1882), com texto na tela e linguagem adaptada para hoje.",
+
+    autor: "Friedrich Nietzsche",
+    ano: "1882",
+
+    detalhes: [
+      "Versão em audiobook de “A Gaia Ciência” (Die fröhliche Wissenschaft), de Friedrich Nietzsche — com o texto na tela e a escrita modernizada e simplificada por mim para soar natural hoje, sem perder a força do original.",
+      "Publicada em 1882 e ampliada em 1887, a obra reúne centenas de aforismos, poemas, parábolas e pequenos ensaios sobre arte, moral, história, conhecimento, ilusão e verdade. É aqui que Nietzsche proclama, pela primeira vez, a “morte de Deus” (no famoso aforismo do Louco), esboça a ideia do eterno retorno e apresenta Zaratustra antes de “Assim Falou Zaratustra”. O próprio Nietzsche chamou este livro de “o mais pessoal de todos os meus livros”.",
+      "Diferente de um tratado acadêmico, “A Gaia Ciência” é filosofia vivida: alegre, irônica, trágica e afirmativa ao mesmo tempo. Nietzsche convida o ouvinte a questionar preconceitos morais herdados, a rir das certezas dogmáticas e a dizer “sim” à vida — mesmo diante do niilismo que se abre quando as antigas verdades perdem o sentido."
+    ],
+
+    aprendizados: [
+      "O que Nietzsche quis dizer com a “morte de Deus” e por que isso importa hoje",
+      "A primeira aparição de Zaratustra e os esboços do eterno retorno",
+      "Como pensar por aforismos — textos curtos que abrem reflexões profundas",
+      "A filosofia da alegria, do riso e da afirmação da vida frente ao niilismo",
+      "Uma porta de entrada acessível a uma das obras centrais de Nietzsche"
+    ],
+
+    temas: ["Morte de Deus", "Eterno retorno", "Moral", "Arte e conhecimento", "Niilismo", "Aforismos", "Alegria e afirmação da vida"],
+
+    sobreAutor: "Friedrich Nietzsche (1844–1900) foi um dos filósofos mais influentes da história. Conhecido pelo estilo provocador e pela crítica radical à moral tradicional, deixou obras como “Assim Falou Zaratustra”, “Para Além do Bem e do Mal” e “A Genealogia da Moral”."
   }
 
 ];
