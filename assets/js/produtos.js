@@ -283,6 +283,39 @@ const PRODUTOS = [
     temas: ["Distopia", "Totalitarismo", "Vigilância", "Liberdade", "Manipulação da verdade"],
 
     sobreAutor: "George Orwell (1903–1950), pseudônimo de Eric Arthur Blair, foi um escritor e jornalista britânico. Crítico contundente de todo autoritarismo, tornou-se mundialmente conhecido por “A Revolução dos Bichos” e “1984”, livros que viraram símbolos da defesa da liberdade, da verdade e do pensamento independente."
+  },
+
+  {
+    titulo: "A Gaia Ciência — E-book (Adaptação Ledger)",
+    tipo: "ebook",
+    categoria: "Filosofia",
+    acesso: "exclusivo",
+    preco: "R$ 15,00",
+    imagem: "assets/img/capa-gaia-ciencia.jpeg",
+    link: "https://pay.hotmart.com/T106711358H",
+    previa: "assets/ebooks/gaia-ciencia-previa.pdf",   // prévia grátis (30 páginas) — pode ser pública
+    descricao: "Minha adaptação completa de “A Gaia Ciência”, de Nietzsche — 335 páginas, em PDF e EPUB.",
+
+    autor: "Friedrich Nietzsche",
+    ano: "1882",
+
+    detalhes: [
+      "Minha adaptação completa de “A Gaia Ciência” (Die fröhliche Wissenschaft), de Friedrich Nietzsche — uma das obras mais pessoais e variadas do filósofo, com 335 páginas e linguagem modernizada e simplificada por mim para soar natural hoje, sem perder a força do original. Disponível em PDF (ideal para computador ou impressão) e em EPUB (ideal para celular e leitores de e-book).",
+      "Publicada em 1882 e ampliada em 1887, a obra reúne centenas de aforismos, poemas, parábolas e pequenos ensaios sobre arte, moral, história, conhecimento, ilusão e verdade. É aqui que Nietzsche proclama, pela primeira vez, a “morte de Deus” (no famoso aforismo do Louco), esboça a ideia do eterno retorno e apresenta Zaratustra antes de “Assim Falou Zaratustra”. O próprio Nietzsche chamou este livro de “o mais pessoal de todos os meus livros”.",
+      "Diferente de um tratado acadêmico, “A Gaia Ciência” é filosofia vivida: alegre, irônica, trágica e afirmativa ao mesmo tempo. Nietzsche convida o leitor a questionar preconceitos morais herdados, a rir das certezas dogmáticas e a dizer “sim” à vida — mesmo diante do niilismo que se abre quando as antigas verdades perdem o sentido."
+    ],
+
+    aprendizados: [
+      "O que Nietzsche quis dizer com a “morte de Deus” e por que isso importa hoje",
+      "A primeira aparição de Zaratustra e os esboços do eterno retorno",
+      "Como pensar por aforismos — textos curtos que abrem reflexões profundas",
+      "A filosofia da alegria, do riso e da afirmação da vida frente ao niilismo",
+      "Uma porta de entrada acessível a uma das obras centrais de Nietzsche"
+    ],
+
+    temas: ["Morte de Deus", "Eterno retorno", "Moral", "Arte e conhecimento", "Niilismo", "Aforismos", "Alegria e afirmação da vida"],
+
+    sobreAutor: "Friedrich Nietzsche (1844–1900) foi um dos filósofos mais influentes da história. Conhecido pelo estilo provocador e pela crítica radical à moral tradicional, deixou obras como “Assim Falou Zaratustra”, “Para Além do Bem e do Mal” e “A Genealogia da Moral”."
   }
 
 ];
