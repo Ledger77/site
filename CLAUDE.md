@@ -210,7 +210,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
 9. **A Gaia Ciência — E-book (Adaptação Ledger)** — 🔒 **EXCLUSIVO**, **R$ 15,00**.
    Texto completo em PDF e EPUB (335 páginas), adaptação própria do dono.
    Prévia grátis (30 páginas) em `assets/ebooks/gaia-ciencia-previa.pdf`.
-   Capa em `assets/img/capa-gaia-ciencia.jpeg` (pendente: dono subir imagem).
+   Capa em `assets/img/capa-gaia-ciencia.jpeg`.
    `link` da Hotmart pendente — atualizar em `produtos.js` quando o dono passar.
 
 ---
