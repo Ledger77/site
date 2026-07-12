@@ -270,10 +270,15 @@ function montarFiltrosCategoria() {
 }
 
 // Ordena a lista conforme a opção escolhida no menu "Ordenar por".
-// "padrao" mantém a ordem do arquivo produtos.js. Ano vazio vai para o fim.
+// "padrao" = mais novos no catálogo primeiro (últimos em produtos.js). Ano vazio vai para o fim.
 function ordenarLista(lista) {
   const porTitulo = (a, b) => a.titulo.localeCompare(b.titulo, "pt", { sensitivity: "base", numeric: true });
   const ano = p => parseInt(p.ano, 10) || null;
+
+  if (ordenacao === "padrao") {
+    lista.sort((a, b) => b._i - a._i);
+    return;
+  }
 
   if (ordenacao === "az") {
     lista.sort(porTitulo);
@@ -289,7 +294,7 @@ function ordenarLista(lista) {
       return aa === ab ? porTitulo(a, b) : (aa - ab) * dir;
     });
   }
-  // "padrao": não mexe (a ordem já vem do filtro, igual ao produtos.js)
+  // demais opções já tratadas acima; "padrao" retorna cedo
 }
 
 function montarFiltrosTipo() {

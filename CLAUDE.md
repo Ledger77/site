@@ -128,8 +128,8 @@ muda, o site atualiza sozinho em 1–2 minutos.
 - ✅ Filtro por **Tipo** (🎧 Audiobook / 🎬 Videobook) — gerado automaticamente a
   partir dos tipos presentes nos produtos (`montarFiltrosTipo` em `app.js`).
 - ✅ Busca por texto (título + descrição).
-- ✅ **Ordenação** (menu "Ordenar por"): Padrão, Título A→Z / Z→A, Mais recente /
-  Mais antigo (por `ano`). Lógica em `ordenarLista` (`app.js`).
+- ✅ **Ordenação** (menu "Ordenar por"): Padrão (mais novos no catálogo primeiro),
+  Título A→Z / Z→A, Mais recente / Mais antigo (por `ano`). Lógica em `ordenarLista` (`app.js`).
 - ✅ **Capas em 16:9** (mesma proporção da miniatura do YouTube): cards e modal
   usam `aspect-ratio: 16/9`, então a imagem aparece **inteira**, sem cortes.
 - ✅ **Modal de detalhes**: clicar no card abre página de detalhes (capa grande,
