@@ -211,7 +211,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
    Texto completo em PDF e EPUB (335 páginas), adaptação própria do dono.
    Prévia grátis (30 páginas) em `assets/ebooks/gaia-ciencia-previa.pdf`.
    Capa em `assets/img/capa-gaia-ciencia.jpeg`.
-   `link` da Hotmart pendente — atualizar em `produtos.js` quando o dono passar.
+   `link` aponta para o checkout da Hotmart: `https://pay.hotmart.com/T106711358H`.
 
 ---
 
