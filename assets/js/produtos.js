@@ -291,7 +291,7 @@ const PRODUTOS = [
     categoria: "Filosofia",
     acesso: "exclusivo",
     preco: "R$ 15,00",
-    imagem: "assets/img/capa-gaia-ciencia.jpeg",
+    imagem: "assets/img/capa-gaia-ciencia.png",
     link: "https://pay.hotmart.com/T106711358H",
     previa: "assets/ebooks/gaia-ciencia-previa.pdf",   // prévia grátis (30 páginas) — pode ser pública
     descricao: "Minha adaptação completa de “A Gaia Ciência”, de Nietzsche — 335 páginas, em PDF e EPUB.",
