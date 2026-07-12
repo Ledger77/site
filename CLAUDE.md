@@ -19,9 +19,9 @@ instruções em português** são prioridade. Toda a manutenção de produtos é
 editando **um único arquivo**: `assets/js/produtos.js`.
 
 ### Links importantes
-- 🌐 Site ao vivo: **https://ledger77.github.io/site/** (domínio próprio
-  `ledger77.com.br` comprado no Registro.br, aguardando configuração de DNS —
-  ver seção 6)
+- 🌐 Site ao vivo: **https://ledger77.com.br/** (domínio próprio configurado;
+  `https://ledger77.github.io/site/` continua funcionando como endereço
+  alternativo)
 - 📦 Repositório: **https://github.com/Ledger77/site**
 - ▶️ Canal YouTube: **https://www.youtube.com/@Ledger.77**
 - 📧 SAC (e-mail de atendimento): **dger77@protonmail.com**
@@ -288,11 +288,10 @@ Este ambiente **bloqueia push direto na `main`** (retorna HTTP 503). O fluxo é:
 - [x] ~~Quando houver produto pago, criar o 1º exclusivo com link da Hotmart~~ →
       **feito**: "1984 — E-book" virou exclusivo, **R$ 3,90**
       (`https://pay.hotmart.com/M106614679D`).
-- [ ] **Domínio próprio** `ledger77.com.br` — **comprado no Registro.br** (2026).
-      Arquivo `CNAME` já criado neste repositório apontando pra ele. **Falta só**
-      o dono configurar o DNS no painel do Registro.br (registros A + CNAME,
-      ver instruções que a IA já passou no chat) e marcar "Enforce HTTPS" em
-      Settings → Pages no GitHub depois que o DNS propagar.
+- [x] ~~Domínio próprio~~ → **feito**: `ledger77.com.br` comprado no Registro.br,
+      DNS configurado (4 registros A pro domínio raiz + CNAME `www` →
+      `ledger77.github.io`), custom domain + "Enforce HTTPS" ativados em
+      Settings → Pages no GitHub. Site já responde em `https://ledger77.com.br`.
 - [ ] Adicionar novas obras assim que o dono postar (pedir título + tipo de cada uma).
 
 ---
