@@ -164,7 +164,7 @@ muda, o site atualiza sozinho em 1–2 minutos.
   zoom suave na capa dos cards e **animações de entrada** (revelar ao rolar, via
   IntersectionObserver nativo). Respeita `prefers-reduced-motion`.
 
-### Produtos atuais (8) — 7 grátis + 1 exclusivo
+### Produtos atuais (10) — 8 grátis + 2 exclusivos
 **Filosofia (Nietzsche) — YouTube, grátis:**
 1. **Humano, Demasiado Humano** (1878) — audiobook — `https://youtu.be/kyKFWEBFe0w`
 2. **Assim Falou Zaratustra** (1883) — videobook ilustrado — `https://youtu.be/VhkXzWzRIyo`
@@ -205,6 +205,13 @@ muda, o site atualiza sozinho em 1–2 minutos.
      (reescrever o histórico ou recomeçar o repositório do zero) ficam disponíveis
      se o site crescer e isso passar a preocupar de verdade — não fazer nenhuma
      das duas sem o dono pedir de novo.
+
+**Filosofia (Nietzsche) — e-book exclusivo:**
+9. **A Gaia Ciência — E-book (Adaptação Ledger)** — 🔒 **EXCLUSIVO**, **R$ 15,00**.
+   Texto completo em PDF e EPUB (335 páginas), adaptação própria do dono.
+   Prévia grátis (30 páginas) em `assets/ebooks/gaia-ciencia-previa.pdf`.
+   Capa em `assets/img/capa-gaia-ciencia.jpeg` (pendente: dono subir imagem).
+   `link` da Hotmart pendente — atualizar em `produtos.js` quando o dono passar.
 
 ---
 
